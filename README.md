@@ -1,2 +1,4 @@
 # nearage.github.io
-[JNN API Reference](https://nearage.github.io/jnn/)
+[JNN API](https://nearage.github.io/jnn/)
+[GitHub](
+https://github.com/Nearage)
