@@ -9,9 +9,9 @@ targets to test the model.
 
 ## References
 
-* JNN https://github.com/Nearage/JNN  
-* NN https://github.com/Nearage/NN
+* [JNN](https://github.com/Nearage/JNN)
+* [NN](https://github.com/Nearage/NN)
 
 ## Links
   
-* GitHub https://github.com/Nearage
+* [GitHub](https://github.com/Nearage)
