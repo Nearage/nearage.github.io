@@ -1,4 +1,4 @@
-import { getDPI } from "https://nearage.github.io/script/common.js";
+import { getDPI, replaceAll } from "https://nearage.github.io/script/common.js";
 
 export class HTMLPort {
     constructor(settings = { height: 11.69, width: 8.27, padding: 0.5 }) {
@@ -19,6 +19,7 @@ export class HTMLPort {
             this.parts.statics.forEach(statik => {
                 if (!page.fits(statik)) {
                     page.useSeparators();
+                    page.updatePageNo();
                     page = new Page(report, this.settings);
                     page.useHeaders(this.parts.headers);
                     page.useFooters(this.parts.footers);
@@ -30,6 +31,7 @@ export class HTMLPort {
             this.parts.records.forEach(record => {
                 if (!page.fits(record)) {
                     page.useSeparators();
+                    page.updatePageNo();
                     page = new Page(report, this.settings);
                     page.useHeaders(this.parts.headers);
                     page.useFooters(this.parts.footers);
@@ -41,6 +43,7 @@ export class HTMLPort {
             this.parts.bottoms.forEach(bottom => {
                 if (!page.fits(bottom)) {
                     page.useSeparators();
+                    page.updatePageNo();
                     page = new Page(report, this.settings);
                     page.useHeaders(this.parts.headers);
                     page.useFooters(this.parts.footers);
@@ -52,15 +55,17 @@ export class HTMLPort {
             this.parts.endings.forEach(ending => {
                 if (!page.fits(ending)) {
                     page.useSeparators();
+                    page.updatePageNo();
                     page = new Page(report, this.settings);
                     page.useHeaders(this.parts.headers);
                     page.useFooters(this.parts.footers);
                 }
 
-                page.main.appendChild(ending);                
+                page.main.appendChild(ending);
             });
 
             page.useSeparators();
+            page.updatePageNo();
         });
     }
 
@@ -134,5 +139,15 @@ export class Page {
         const static_bottom = this.main.querySelector(".bottom");
 
         this.body.insertBefore(separator, static_bottom);
+    }
+
+    getPageNo() {
+        return Array.from(this.root.parentElement.querySelectorAll(".main"))
+            .indexOf(this.main) + 1;
+    }
+
+    updatePageNo() {
+        this.main.querySelectorAll("*")
+            .forEach(node => replaceAll(node, "%page%", this.getPageNo()));
     }
 }
