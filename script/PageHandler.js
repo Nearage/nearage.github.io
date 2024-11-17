@@ -1,5 +1,5 @@
-import { appendChilds } from "./common.js";
-import { createSeparator, getHeight, getPageNo, updatePageNo } from "./PageHandlerImp.js";
+import { appendChilds } from "https://nearage.github.io/script/common.js";
+import { createSeparator, getHeight, getPageNo, updatePageNo } from "https://nearage.github.io/script/PageHandlerImp.js";
 
 export class PageHandler {
     constructor(root, layout, body) {
