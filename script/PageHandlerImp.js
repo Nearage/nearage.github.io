@@ -1,4 +1,4 @@
-import { appendChilds, replaceAll } from "./common.js";
+import { appendChilds, replaceAll } from "https://nearage.github.io/script/common.js";
 
 export function createSeparator(layout, body) { 
     const height = layout.offsetHeight - getHeight(layout);
