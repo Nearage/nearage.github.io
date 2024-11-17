@@ -36,10 +36,10 @@ export function Run() {
         const bottoms = report.querySelectorAll(".bottom");
         const endings = report.querySelectorAll(".ending");
 
-        // headers.forEach(header => report.removeChild(header));
-        // footers.forEach(footer => report.removeChild(footer));
+        headers.forEach(header => report.removeChild(header));
+        footers.forEach(footer => report.removeChild(footer));
 
-        let page = createPage(report, headers, footers);
+        let page = createPage(report, headers, footers, true);
         
         statiks.forEach(statik => {
             if (!page.fits(statik)) {
