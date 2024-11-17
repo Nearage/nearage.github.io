@@ -47,7 +47,7 @@ export function Run() {
                 page = createPage(report, headers, footers, true);
             }
 
-            page.layout.insertBefore(statik, page.layout.firstChild);
+            page.appendFirst(statik);
         });
 
         records.forEach(record => {
@@ -56,7 +56,7 @@ export function Run() {
                 page = createPage(report, headers, footers, true);
             }
 
-            page.appendChilds([record]);
+            page.appendNodes(record);
         });
 
         bottoms.forEach(bottom => {
@@ -65,7 +65,7 @@ export function Run() {
                 page = createPage(report, headers, footers, true);
             }
 
-            page.appendChilds([bottom]);
+            page.appendNodes(bottom);
         });
 
         endings.forEach(ending => {
@@ -74,7 +74,7 @@ export function Run() {
                 page = createPage(report, headers, footers, true);
             }
 
-            page.layout.appendChild(ending);
+            page.appendLast(ending);
         });
 
         page.createSeparator();
