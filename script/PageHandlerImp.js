@@ -18,7 +18,8 @@ export function createSeparator(layout, body) {
 
     const static_bottom = body.querySelector(".bottom");
     
-    body.insertBefore(separator, static_bottom);}
+    body.insertBefore(separator, static_bottom);
+}
 
 export function getHeight(layout) {
     return Array.from(layout.children)

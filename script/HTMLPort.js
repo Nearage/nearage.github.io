@@ -3,20 +3,20 @@ import { getDPI, appendChilds } from "https://nearage.github.io/script/common.js
 
 function createPage(parent, headers, footers, clone = false) {
     const root = Object.assign(document.createElement("div"), { className: "root", style: `padding: ${settings.padding * getDPI()}px` });
-    const page = Object.assign(document.createElement("div"), { className: "page" });
+    const layout = Object.assign(document.createElement("div"), { className: "page" });
 
-    page.style.width = `${(settings.width - 2 * settings.padding) * getDPI()}px`;
-    page.style.height = `${(settings.height - 2 * settings.padding) * getDPI()}px`;
+    layout.style.width = `${(settings.width - 2 * settings.padding) * getDPI()}px`;
+    layout.style.height = `${(settings.height - 2 * settings.padding) * getDPI()}px`;
 
     const body = Object.assign(document.createElement("div"), { className: "body" });
 
-    appendChilds(page, headers, clone);
-    appendChilds(page, [body]);
-    appendChilds(page, footers, clone);
-    appendChilds(root, [page]);
+    appendChilds(layout, headers, clone);
+    appendChilds(layout, [body]);
+    appendChilds(layout, footers, clone);
+    appendChilds(root, [layout]);
     appendChilds(parent, [root]);
 
-    return new PageHandler(root, page, body);
+    return new PageHandler(root, layout, body);
 }
 
 export const settings = {
@@ -40,7 +40,7 @@ export function Run() {
         footers.forEach(footer => report.removeChild(footer));
 
         let page = createPage(report, headers, footers, true);
-        
+
         statiks.forEach(statik => {
             if (!page.fits(statik)) {
                 page.createSeparator();
@@ -79,27 +79,4 @@ export function Run() {
 
         page.createSeparator();
     });
-}
-
-class HTMLPort {
-    constructor(settings) {
-        this.settings = settings;
-    }
-
-    Run() {
-        const reports = document.querySelectorAll(".report");
-
-        reports.forEach(report => {
-            this.#getParts(report);
-        });
-    }
-
-    #getParts(report) {        
-        const statiks = report.querySelectorAll(".static");
-        const headers = report.querySelectorAll(".header");
-        const records = report.querySelectorAll(".record");
-        const footers = report.querySelectorAll(".footer");
-        const bottoms = report.querySelectorAll(".bottom");
-        const endings = report.querySelectorAll(".ending");
-    }
 }
