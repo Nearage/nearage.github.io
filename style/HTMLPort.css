@@ -7,11 +7,11 @@
         gap: 0 !important;
     }
     .root {
-        page-break-inside: avoid;
-        /* page-break-after: always; */
+        background: none !important;
         border-radius: 0 !important;
         box-shadow: none !important;
-        background: none !important;
+        /* page-break-after: always; */
+        page-break-inside: avoid;
     }
     .page {
         border-radius: 0 !important;
@@ -28,6 +28,7 @@ body {
     display: flex;
     flex-flow: column;
     gap: 16px;
+    min-width: 8.27in;
     padding: 16px;
 }
 
@@ -38,10 +39,10 @@ body {
 }
 
 .root {
+    background: #eee;
     border-radius: 8px;
     box-shadow: 0 4px 8px 2px #0006;
     overflow: hidden;
-    background: #eee;
 }
 
 .page {
