@@ -18,11 +18,14 @@ export class HTMLPort {
                 endings: report.querySelectorAll(".ending")
             };
 
+            Array.from(this.parts.headers).map(header => header.parentElement?.removeChild(header));
+            Array.from(this.parts.footers).map(footer => footer.parentElement?.removeChild(footer));    
+
             let page = new Page(report, this.settings);
 
             const startNewPage = () => {
                 page.useSeparators();
-                page.updatePageNo();
+                page.setPageNo();
                 page = new Page(report, this.settings);
                 page.useHeaders(this.parts.headers);
                 page.useFooters(this.parts.footers);
@@ -53,7 +56,7 @@ export class HTMLPort {
             appendTo(this.parts.endings, appendToMain);
 
             page.useSeparators();
-            page.updatePageNo();
+            page.setPageNo();
         });
     }
 }
@@ -76,26 +79,12 @@ export class Page {
         this.parent.append(this.root);
     }
 
-    getHeight() {
-        return Array.from(this.main.children)
-            .reduce((height, child) => height += child.offsetHeight, 0);
-    }
-
-    fits(record) {
-        return this.getHeight() + record.offsetHeight <= this.main.offsetHeight;
-    }
-
-    useHeaders(headers) {
-        Array.from(headers).map(header => header.parentElement?.removeChild(header));
-
-        headers.forEach(header => this.main.insertBefore(header.cloneNode(true), this.body));
-    }
-
-    useFooters(footers) {
-        Array.from(footers).map(footer => footer.parentElement?.removeChild(footer));
-
-        footers.forEach(footer => this.main.insertAdjacentElement("beforeend", footer.cloneNode(true)));
-    }
+    fits = record => this.getHeight() + record.offsetHeight <= this.main.offsetHeight;  
+    getHeight = () => Array.from(this.main.children).reduce((height, child) => height += child.offsetHeight, 0);
+    getPageNo = () => Array.from(this.root.parentElement.querySelectorAll(".main")).indexOf(this.main) + 1;
+    setPageNo = () => this.main.querySelectorAll("*").forEach(node => replaceAll(node, "%page%", this.getPageNo()));
+    useHeaders = headers => headers.forEach(header => this.main.insertBefore(header.cloneNode(true), this.body));
+    useFooters = footers =>footers.forEach(footer => this.main.insertAdjacentElement("beforeend", footer.cloneNode(true)));
 
     useSeparators() {
         const height = this.main.offsetHeight - this.getHeight();
@@ -116,15 +105,5 @@ export class Page {
         const static_bottom = this.main.querySelector(".bottom");
 
         this.body.insertBefore(separator, static_bottom);
-    }
-
-    getPageNo() {
-        return Array.from(this.root.parentElement.querySelectorAll(".main"))
-            .indexOf(this.main) + 1;
-    }
-
-    updatePageNo() {
-        this.main.querySelectorAll("*")
-            .forEach(node => replaceAll(node, "%page%", this.getPageNo()));
     }
 }
