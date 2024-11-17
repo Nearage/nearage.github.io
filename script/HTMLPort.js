@@ -36,10 +36,10 @@ export function Run() {
         const bottoms = report.querySelectorAll(".bottom");
         const endings = report.querySelectorAll(".ending");
 
-        headers.forEach(header => report.removeChild(header));
-        footers.forEach(footer => report.removeChild(footer));
+        // headers.forEach(header => report.removeChild(header));
+        // footers.forEach(footer => report.removeChild(footer));
 
-        let page = createPage(report, headers, footers, true);
+        let page = createPage(report, headers, footers);
         
         statiks.forEach(statik => {
             if (!page.fits(statik)) {
@@ -79,4 +79,27 @@ export function Run() {
 
         page.createSeparator();
     });
+}
+
+class HTMLPort {
+    constructor(settings) {
+        this.settings = settings;
+    }
+
+    Run() {
+        const reports = document.querySelectorAll(".report");
+
+        reports.forEach(report => {
+            this.#getParts(report);
+        });
+    }
+
+    #getParts(report) {        
+        const statiks = report.querySelectorAll(".static");
+        const headers = report.querySelectorAll(".header");
+        const records = report.querySelectorAll(".record");
+        const footers = report.querySelectorAll(".footer");
+        const bottoms = report.querySelectorAll(".bottom");
+        const endings = report.querySelectorAll(".ending");
+    }
 }
