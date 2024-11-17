@@ -1,4 +1,4 @@
-import { appendChilds, replaceAll } from "https://nearage.github.io/script/common.js";
+import { replaceAll } from "https://nearage.github.io/script/common.js";
 
 export function createSeparator(layout, body) { 
     const height = layout.offsetHeight - getHeight(layout);
@@ -16,8 +16,9 @@ export function createSeparator(layout, body) {
                 text-align: center;`
     });
 
-    appendChilds(body, [separator]);
-}
+    const static_bottom = body.querySelector(".bottom");
+    
+    body.insertBefore(separator, static_bottom);}
 
 export function getHeight(layout) {
     return Array.from(layout.children)

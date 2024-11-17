@@ -3,10 +3,10 @@ import { createSeparator, getHeight, getPageNo, updatePageNo } from "https://nea
 
 export class PageHandler {
     constructor(root, layout, body) {
-        this.appendChilds = nodes => appendChilds(body, nodes);
-        this.createSeparator = () => createSeparator(layout, body);        
+        this.appendChilds = nodes => {appendChilds(body, nodes); updatePageNo(root, layout)};
+        this.createSeparator = () => {createSeparator(layout, body); updatePageNo(root, layout)};
         this.fits = record => getHeight(layout) + record.offsetHeight <= layout.offsetHeight;
         this.getPageNo = () => getPageNo(root, layout);
-        this.updatePageNo = () => updatePageNo(root, layout);
+        this.layout = layout;
     }
 }

@@ -29,28 +29,54 @@ export function Run() {
     const reports = document.querySelectorAll(".report");
 
     reports.forEach(report => {
+        const statiks = report.querySelectorAll(".static");
         const headers = report.querySelectorAll(".header");
         const records = report.querySelectorAll(".record");
         const footers = report.querySelectorAll(".footer");
+        const bottoms = report.querySelectorAll(".bottom");
+        const endings = report.querySelectorAll(".ending");
 
         headers.forEach(header => report.removeChild(header));
         footers.forEach(footer => report.removeChild(footer));
 
         let page = createPage(report, headers, footers, true);
+        
+        statiks.forEach(statik => {
+            if (!page.fits(statik)) {
+                page.createSeparator();
+                page = createPage(report, headers, footers, true);
+            }
 
-        records.forEach((record, index) => {
+            page.layout.insertBefore(statik, page.layout.firstChild);
+        });
+
+        records.forEach(record => {
             if (!page.fits(record)) {
                 page.createSeparator();
                 page = createPage(report, headers, footers, true);
             }
 
             page.appendChilds([record]);
-
-            const is_last_record = index == records.length - 1;
-
-            if (is_last_record) page.createSeparator();
-            
-            page.updatePageNo();
         });
+
+        bottoms.forEach(bottom => {
+            if (!page.fits(bottom)) {
+                page.createSeparator();
+                page = createPage(report, headers, footers, true);
+            }
+
+            page.appendChilds([bottom]);
+        });
+
+        endings.forEach(ending => {
+            if (!page.fits(ending)) {
+                page.createSeparator();
+                page = createPage(report, headers, footers, true);
+            }
+
+            page.layout.appendChild(ending);
+        });
+
+        page.createSeparator();
     });
 }
