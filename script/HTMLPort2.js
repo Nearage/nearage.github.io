@@ -9,75 +9,52 @@ export class HTMLPort {
         const reports = document.querySelectorAll(".report");
 
         reports.forEach(report => {
-            this.parts = this.#getParts(report);
+            this.parts = {
+                statics: report.querySelectorAll(".static"),
+                headers: report.querySelectorAll(".header"),
+                records: report.querySelectorAll(".record"),
+                bottoms: report.querySelectorAll(".bottom"),
+                footers: report.querySelectorAll(".footer"),
+                endings: report.querySelectorAll(".ending")
+            };
 
             let page = new Page(report, this.settings);
+
+            const startNewPage = () => {
+                page.useSeparators();
+                page.updatePageNo();
+                page = new Page(report, this.settings);
+                page.useHeaders(this.parts.headers);
+                page.useFooters(this.parts.footers);
+            };
 
             page.useHeaders(this.parts.headers);
             page.useFooters(this.parts.footers);
 
-            this.parts.statics.forEach(statik => {
-                if (!page.fits(statik)) {
-                    page.useSeparators();
-                    page.updatePageNo();
-                    page = new Page(report, this.settings);
-                    page.useHeaders(this.parts.headers);
-                    page.useFooters(this.parts.footers);
-                }
+            const appendToMain = (child, before) => {
+                if (!page.fits(child)) startNewPage();
 
-                page.main.insertBefore(statik, page.main.firstChild);
-            });
+                page.main.insertBefore(child, before);
+            };
 
-            this.parts.records.forEach(record => {
-                if (!page.fits(record)) {
-                    page.useSeparators();
-                    page.updatePageNo();
-                    page = new Page(report, this.settings);
-                    page.useHeaders(this.parts.headers);
-                    page.useFooters(this.parts.footers);
-                }
+            const appendToBody = (child, before) => {
+                if (!page.fits(child)) startNewPage();
 
-                page.body.appendChild(record);
-            });
+                page.body.insertBefore(child, before);
+            };
 
-            this.parts.bottoms.forEach(bottom => {
-                if (!page.fits(bottom)) {
-                    page.useSeparators();
-                    page.updatePageNo();
-                    page = new Page(report, this.settings);
-                    page.useHeaders(this.parts.headers);
-                    page.useFooters(this.parts.footers);
-                }
+            const appendTo = (children, callback, before = null) => {
+                children.forEach(child => callback(child, before));
+            }
 
-                page.body.insertAdjacentElement("beforeend", bottom);
-            });
-
-            this.parts.endings.forEach(ending => {
-                if (!page.fits(ending)) {
-                    page.useSeparators();
-                    page.updatePageNo();
-                    page = new Page(report, this.settings);
-                    page.useHeaders(this.parts.headers);
-                    page.useFooters(this.parts.footers);
-                }
-
-                page.main.appendChild(ending);
-            });
+            appendTo(this.parts.statics, appendToMain, page.main.firstChild);
+            appendTo(this.parts.records, appendToBody);
+            appendTo(this.parts.bottoms, appendToBody);
+            appendTo(this.parts.endings, appendToMain);
 
             page.useSeparators();
             page.updatePageNo();
         });
-    }
-
-    #getParts(report) {
-        return {
-            statics: report.querySelectorAll(".static"),
-            headers: report.querySelectorAll(".header"),
-            records: report.querySelectorAll(".record"),
-            bottoms: report.querySelectorAll(".bottom"),
-            footers: report.querySelectorAll(".footer"),
-            endings: report.querySelectorAll(".ending")
-        }
     }
 }
 
