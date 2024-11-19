@@ -119,7 +119,7 @@ class HTMLPortImpl {
     }
 
     static useHeaders(page, headers) {
-        headers.forEach(header => page.main.insertBefore(header.cloneNode(true), page.body));
+        headers.forEach(header => page.body.insertAdjacentElement("beforebegin", header.cloneNode(true)));
     }
 
     static useFooters(page, footers) {
