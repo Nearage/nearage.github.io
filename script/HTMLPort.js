@@ -6,12 +6,12 @@ export class HTMLPort {
 
         reports.forEach(report => {
             this.parts = {
-                statics: report.querySelectorAll(".static"),
+                statics: report.querySelectorAll(".fixtop"),
                 headers: report.querySelectorAll(".header"),
                 records: report.querySelectorAll(".record"),
-                bottoms: report.querySelectorAll(".bottom"),
+                bottoms: report.querySelectorAll(".append"),
                 footers: report.querySelectorAll(".footer"),
-                endings: report.querySelectorAll(".ending")
+                endings: report.querySelectorAll(".fixbot")
             };
 
             Array.from(this.parts.headers).map(header => header.parentElement?.removeChild(header));
@@ -58,6 +58,9 @@ export class HTMLPort {
 
             page.fillPage();
             page.setPageNo();
+            page.setNumPages();
+
+            // report.querySelectorAll("*").forEach(node => replaceAll(node, "%pages%", HTMLPortImpl.getNumPages(page))); 
         });
     }
 }
@@ -86,6 +89,7 @@ export class Page {
     getHeight = () => HTMLPortImpl.getHeight(this);
     getPageNo = () => HTMLPortImpl.getPageNo(this);
     setPageNo = () => HTMLPortImpl.setPageNo(this);
+    setNumPages = () => HTMLPortImpl.setNumPages(this.parent, this);
     useHeaders = (...headers) => HTMLPortImpl.useHeaders(this, ...headers);
     useFooters = (...footers) => HTMLPortImpl.useFooters(this, ...footers);
     fillPage = () => HTMLPortImpl.fillPage(this);
@@ -116,6 +120,16 @@ class HTMLPortImpl {
         page.main
             .querySelectorAll("*")
             .forEach(node => replaceAll(node, "%page%", page.getPageNo()));
+    }
+
+    static getNumPages(page) {
+        return page.root.parentElement.querySelectorAll(".main").length;
+    }
+
+    static setNumPages(parent, page) {
+        parent
+            .querySelectorAll("*")
+            .forEach(node => replaceAll(node, "%pages%", HTMLPortImpl.getNumPages(page)));
     }
 
     static useHeaders(page, headers) {

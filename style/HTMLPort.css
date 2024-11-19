@@ -53,9 +53,9 @@ body {
 .header,
 .footer,
 .record,
-.static,
-.bottom,
-.ending {
+.fixtop,
+.append,
+.fixbot {
     align-content: center;
     display: block;
     height: .5in;
