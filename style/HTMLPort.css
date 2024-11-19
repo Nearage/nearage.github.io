@@ -23,7 +23,7 @@
     padding: 0;
 }
 
-html {
+html, body {
     min-width: 8.27in;
 }
 
