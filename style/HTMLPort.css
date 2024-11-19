@@ -29,6 +29,7 @@ body {
     flex-flow: column;
     gap: 16px;
     padding: 16px;
+    min-width: 8.27in;
 }
 
 .report {
