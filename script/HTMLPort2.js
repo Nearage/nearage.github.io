@@ -1,11 +1,7 @@
-import { getDPI, replaceAll } from "https://nearage.github.io/script/common.js";
+import { getDPI, replaceAll,createElement } from "./common.js";
 
 export class HTMLPort {
-    constructor(settings = { height: 11.69, width: 8.27, padding: 0.5 }) {
-        this.settings = settings;
-    }
-
-    run() {
+    static run(settings = { width: 8.27, height: 11.69, padding: 0.5 }) {
         const reports = document.querySelectorAll(".report");
 
         reports.forEach(report => {
@@ -21,12 +17,12 @@ export class HTMLPort {
             Array.from(this.parts.headers).map(header => header.parentElement?.removeChild(header));
             Array.from(this.parts.footers).map(footer => footer.parentElement?.removeChild(footer));    
 
-            let page = new Page(report, this.settings);
+            let page = new Page(report, settings);
 
             const startNewPage = () => {
-                page.useSeparators();
+                page.fill();
                 page.setPageNo();
-                page = new Page(report, this.settings);
+                page = new Page(report, settings);
                 page.useHeaders(this.parts.headers);
                 page.useFooters(this.parts.footers);
             };
@@ -52,10 +48,13 @@ export class HTMLPort {
 
             appendTo(this.parts.statics, appendToMain, page.main.firstChild);
             appendTo(this.parts.records, appendToBody);
+
+            if (!page.fits(...this.parts.bottoms)) startNewPage();
+
             appendTo(this.parts.bottoms, appendToBody);
             appendTo(this.parts.endings, appendToMain);
 
-            page.useSeparators();
+            page.fill();
             page.setPageNo();
         });
     }
@@ -66,27 +65,28 @@ export class Page {
         this.parent = parent;
         this.settings = settings;
 
-        this.root = Object.assign(document.createElement("div"), { className: "root" });
-        this.main = Object.assign(document.createElement("div"), { className: "main" });
-        this.body = Object.assign(document.createElement("div"), { className: "body" });
+        this.root = createElement("div", "root");
+        this.main = createElement("div", "main");
+        this.body = createElement("div", "body");
 
-        this.root.style.padding = `${this.settings.padding * getDPI()}px`;
-        this.main.style.width = `${(this.settings.width - 2 * this.settings.padding) * getDPI()}px`;
-        this.main.style.height = `${(this.settings.height - 2 * this.settings.padding) * getDPI()}px`;
+        this.root.style.padding = `${getDPI(this.settings.padding)}px`;
+        this.root.style.width = `${getDPI(this.settings.width)}px`;
+        this.root.style.height = `${getDPI(this.settings.height)}px`;
+
+        this.main.style.height = "100%";
 
         this.main.append(this.body);
         this.root.append(this.main);
         this.parent.append(this.root);
     }
 
-    fits = record => this.getHeight() + record.offsetHeight <= this.main.offsetHeight;  
+    fits = (...records) => this.getHeight() + Array.from(records).reduce((height, record) => height += record.offsetHeight, 0) <= this.main.offsetHeight;
     getHeight = () => Array.from(this.main.children).reduce((height, child) => height += child.offsetHeight, 0);
     getPageNo = () => Array.from(this.root.parentElement.querySelectorAll(".main")).indexOf(this.main) + 1;
     setPageNo = () => this.main.querySelectorAll("*").forEach(node => replaceAll(node, "%page%", this.getPageNo()));
     useHeaders = headers => headers.forEach(header => this.main.insertBefore(header.cloneNode(true), this.body));
     useFooters = footers =>footers.forEach(footer => this.main.insertAdjacentElement("beforeend", footer.cloneNode(true)));
-
-    useSeparators() {
+    fill() {
         const height = this.main.offsetHeight - this.getHeight();
 
         if (height <= 0) return;

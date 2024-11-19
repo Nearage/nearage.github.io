@@ -6,13 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module">
-        // import * as HTMLPort from "https://nearage.github.io/script/HTMLPort.js";
-        import { HTMLPort } from "https://nearage.github.io/script/HTMLPort2.js";
-        // import { HTMLPort } from "./script/HTMLPort2.js";
+        import { HTMLPort, Page } from "./script/HTMLPort2.js";
 
         window.addEventListener("load", _ => {
-            const htmlport = new HTMLPort({ height: 3.5, width: 6, padding: 0.25 });
-            htmlport.run();
+            HTMLPort.run({ width: 6, height: 4, padding: 0 });
         });
     </script>
     <title>Document</title>
@@ -71,7 +68,7 @@
         <div class="record" contentEditable="true" style="background-color: #ccc;">10 - Page: %page%</div>
         <div class="bottom" style="background-color: #f60; color: white;">Static footer 1</div>
         <div class="footer" style="background-color: #0c9; color: white;">Pre-footer</div>
-        <div class="footer" style="background-color: #06f; color: white;">Footer %page%</div>        
+        <div class="footer" style="background-color: #06f; color: white;">Footer %page%</div>
         <div class="ending" style="background-color: #f9f; color: white;">Ending</div>
     </div>
 </body>

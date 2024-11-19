@@ -16,7 +16,7 @@
     .main {
         border-radius: 0 !important;
     }
-}
+} 
 
 * {
     margin: 0;
@@ -28,7 +28,6 @@ body {
     display: flex;
     flex-flow: column;
     gap: 16px;
-    min-width: 8.27in;
     padding: 16px;
 }
 
@@ -43,6 +42,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px 2px #0006;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .main {

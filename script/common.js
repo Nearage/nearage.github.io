@@ -14,11 +14,11 @@ export function appendChilds(parent, nodes, clone = false) {
  * Returns the DPI of the current page.
  * @returns {number} The DPI of the current page.
  */
-export function getDPI() {
+export function getDPI(number = 1) {
     const one_inch = Object.assign(document.createElement("div"), { style: "width: 1in" })
 
     return document.body.appendChild(one_inch)
-         | one_inch.offsetWidth
+         | one_inch.offsetWidth * number
          | document.body.removeChild(one_inch);
 }
 
@@ -30,4 +30,14 @@ export function getDPI() {
  */
 export function replaceAll(node, searchValue, replaceValue) {
     node.innerHTML = node.innerHTML.replaceAll(searchValue, replaceValue);
+}
+
+/**
+ * Creates a new element with the given tag name and class name.
+ * @param {string} tagName The tag name of the element to create.
+ * @param {string} className The class name of the element to create.
+ * @returns {HTMLDivElement} The created element.
+ */
+export function createElement(tagName, className) {
+    return Object.assign(document.createElement(tagName), { className });
 }
