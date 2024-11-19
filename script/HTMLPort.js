@@ -32,25 +32,29 @@ export class HTMLPort {
             page.useHeaders(this.parts.headers);
             page.useFooters(this.parts.footers);
 
-            const appendToMain = (child, before = null) => {
+            const appendTo = ((to, child, before = null) => {
                 if (!page.fits(child)) startNewPage();
 
-                page.main.insertBefore(child, before);
-            };
+                switch (to) {
+                    case "head":
+                        page.main.insertBefore(child, page.main.firstChild);
+                        break;
+                    case "main":
+                        page.main.insertBefore(child, before);
+                        break;
+                    case "body":
+                        page.body.insertBefore(child, before);
+                        break;
+                }
+            });
 
-            const appendToBody = (child, before = null) => {
-                if (!page.fits(child)) startNewPage();
-
-                page.body.insertBefore(child, before);
-            };
-
-            this.parts.statics.forEach(statics => appendToMain(statics, page.main.firstChild));
-            this.parts.records.forEach(records => appendToBody(records));
+            this.parts.statics.forEach(statics => appendTo("head", statics));
+            this.parts.records.forEach(records => appendTo("body", records));
 
             if (!page.fits(...this.parts.bottoms)) startNewPage();
 
-            this.parts.bottoms.forEach(bottoms => appendToBody(bottoms));
-            this.parts.endings.forEach(endings => appendToMain(endings));
+            this.parts.bottoms.forEach(bottoms => appendTo("body", bottoms));
+            this.parts.endings.forEach(endings => appendTo("main", endings));
 
             page.fillPage();
             page.setPageNo();
