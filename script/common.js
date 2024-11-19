@@ -1,16 +1,4 @@
 /**
- * Appends the given nodes to the parent.
- * @param {HTMLDivElement} parent The parent to append to.
- * @param {NodeListOf<HTMLDivElement>} nodes The nodes to append.
- * @param {boolean} clone Whether to clone the nodes before appending.
- * @returns {void}
- */
-export function appendChilds(parent, nodes, clone = false) {    
-    clone ? nodes.forEach(node => parent.appendChild(node.cloneNode(true)))
-          : nodes.forEach(node => parent.appendChild(node));
-}
-
-/**
  * Returns the DPI of the current page.
  * @returns {number} The DPI of the current page.
  */
