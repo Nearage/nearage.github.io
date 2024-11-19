@@ -51,7 +51,7 @@ export class HTMLPort {
             this.parts.fixtops.forEach(fixtop => appendTo("head", fixtop));
             this.parts.records.forEach(record => appendTo("body", record));
 
-            if (!page.fits(...this.parts.appends)) startNewPage();
+            if (!page.fits(...[...this.parts.appends, ...this.parts.fixbots])) startNewPage();
 
             this.parts.appends.forEach(append => appendTo("body", append));
             this.parts.fixbots.forEach(fixbot => appendTo("main", fixbot));
