@@ -61,7 +61,7 @@ export class PageImpl {
                     text-align: center;`
         });
 
-        const static_bottom = page.main.querySelector(".bottom");
+        const static_bottom = page.main.querySelector(".append");
 
         page.body.insertBefore(separator, static_bottom);
     }

@@ -6,12 +6,12 @@ export class HTMLPort {
 
         reports.forEach(report => {
             this.parts = {
-                statics: report.querySelectorAll(".fixtop"),
+                fixtops: report.querySelectorAll(".fixtop"),
                 headers: report.querySelectorAll(".header"),
                 records: report.querySelectorAll(".record"),
-                bottoms: report.querySelectorAll(".append"),
+                appends: report.querySelectorAll(".append"),
                 footers: report.querySelectorAll(".footer"),
-                endings: report.querySelectorAll(".fixbot")
+                fixbots: report.querySelectorAll(".fixbot")
             };
 
             Array.from(this.parts.headers).map(header => header.parentElement.removeChild(header));
@@ -48,13 +48,13 @@ export class HTMLPort {
                 }
             });
 
-            this.parts.statics.forEach(statics => appendTo("head", statics));
-            this.parts.records.forEach(records => appendTo("body", records));
+            this.parts.fixtops.forEach(fixtop => appendTo("head", fixtop));
+            this.parts.records.forEach(record => appendTo("body", record));
 
-            if (!page.fits(...this.parts.bottoms)) startNewPage();
+            if (!page.fits(...this.parts.appends)) startNewPage();
 
-            this.parts.bottoms.forEach(bottoms => appendTo("body", bottoms));
-            this.parts.endings.forEach(endings => appendTo("main", endings));
+            this.parts.appends.forEach(append => appendTo("body", append));
+            this.parts.fixbots.forEach(fixbot => appendTo("main", fixbot));
 
             page.fillPage();
             page.setPageNo();
