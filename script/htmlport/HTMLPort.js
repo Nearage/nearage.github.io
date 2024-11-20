@@ -59,19 +59,9 @@ export class HTMLPort {
             const appendTo = ((to, child) => {
                 if (!page.fits(child)) startNewPage();
 
-                console.log(/[to]/.test(to));
-
-                switch (to) {
-                    case "head":
-                        page.main.insertBefore(child, page.main.querySelector(".header, .body"));
-                        break;
-                    case "body":
-                        page.body.insertBefore(child, null);
-                        break;
-                    case "foot":
-                        page.main.insertBefore(child, null);
-                        break;
-                }
+                if (/head/.test(to)) page.main.insertBefore(child, page.main.querySelector(".header, .body"));
+                if (/body/.test(to)) page.body.insertBefore(child, null);
+                if (/foot/.test(to)) page.main.insertBefore(child, null);
             });
 
             parts.fixtops.forEach(fixtop => appendTo("head", fixtop));
