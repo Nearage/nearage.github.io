@@ -12,7 +12,6 @@
         background: none !important;
         border-radius: 0 !important;
         box-shadow: none !important;
-        /* page-break-after: always; */
         page-break-inside: avoid;
     }
 

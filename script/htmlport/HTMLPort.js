@@ -8,16 +8,13 @@ export class HTMLPort {
             const settings = {
                 width: 8.27,
                 height: 11.69,
-                padding: 0.5
+                padding: 0.5,
+                pagebreak: "auto"
             }
 
-            const reportSettings = report.querySelectorAll("#settings");
-
-            reportSettings.forEach(setting => {
-                settings.width = parseFloat(setting.querySelector("#width").innerText);
-                settings.height = parseFloat(setting.querySelector("#height").innerText);
-                settings.padding = parseFloat(setting.querySelector("#padding").innerText);
-            });
+            Object
+                .entries(settings)
+                .forEach(([key, _]) => settings[key] = report.querySelector(`#${key}`)?.innerText || settings[key]);
 
             this.parts = {
                 fixtops: report.querySelectorAll(".fixtop"),
@@ -73,6 +70,8 @@ export class HTMLPort {
             page.fillPage();
             page.setPageNo();
             page.setNumPages();
+
+            report.querySelectorAll(".root").forEach(root => root.style.pageBreakAfter = settings.pagebreak);
         });
     }
 }
