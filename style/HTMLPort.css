@@ -10,14 +10,13 @@
 
     .root {
         background: none !important;
-        border-radius: 0 !important;
         box-shadow: none !important;
         page-break-inside: avoid;
     }
 
-    .main {
+    /* .main {
         border-radius: 0 !important;
-    }
+    } */
 }
 
 * {
