@@ -36,7 +36,7 @@ body {
     flex-flow: column;
     gap: 16px;
     padding: 16px;
-    background-color: #f4f4f4;
+    background-color: #eee;
 }
 
 #settings {
