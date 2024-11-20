@@ -37,6 +37,10 @@ body {
     gap: 16px;
 }
 
+#settings {
+    display: none;
+}
+
 .root {
     background: #eee;
     border-radius: 8px;

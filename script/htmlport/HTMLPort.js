@@ -1,10 +1,24 @@
 import { Page } from "./Page.js";
 
 export class HTMLPort {
-    static run(settings = { width: 8.27, height: 11.69, padding: 0.5 }) {
+    static run() {
         const reports = document.querySelectorAll(".report");
 
         reports.forEach(report => {
+            const settings = {
+                width: 8.27,
+                height: 11.69,
+                padding: 0.5
+            }
+
+            const reportSettings = report.querySelectorAll("#settings");
+
+            reportSettings.forEach(setting => {
+                settings.width = parseFloat(setting.querySelector("#width").innerText);
+                settings.height = parseFloat(setting.querySelector("#height").innerText);
+                settings.padding = parseFloat(setting.querySelector("#padding").innerText);
+            });
+
             this.parts = {
                 fixtops: report.querySelectorAll(".fixtop"),
                 headers: report.querySelectorAll(".header"),
