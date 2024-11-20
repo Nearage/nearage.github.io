@@ -23,6 +23,10 @@
     padding: 0;
 }
 
+html, body {
+    min-width: 8.27in;
+}
+
 body {
     align-items: center;
     display: flex;
