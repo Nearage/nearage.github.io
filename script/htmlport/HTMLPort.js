@@ -59,15 +59,17 @@ export class HTMLPort {
             const appendTo = ((to, child) => {
                 if (!page.fits(child)) startNewPage();
 
+                console.log(/[to]/.test(to));
+
                 switch (to) {
                     case "head":
                         page.main.insertBefore(child, page.main.querySelector(".header, .body"));
                         break;
                     case "body":
-                        page.body.insertBefore(child);
+                        page.body.insertBefore(child, null);
                         break;
                     case "foot":
-                        page.main.insertBefore(child);
+                        page.main.insertBefore(child, null);
                         break;
                 }
             });
@@ -84,7 +86,9 @@ export class HTMLPort {
             page.setPageNo();
             page.setNumPages();
 
-            report.querySelectorAll(".root").forEach(root => root.style.pageBreakAfter = settings.pagebreak);
+            report
+                .querySelectorAll(".root")
+                .forEach(root => root.style.pageBreakAfter = settings.pagebreak);
         });
     }
 }
