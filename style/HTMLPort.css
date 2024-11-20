@@ -3,9 +3,11 @@
         padding: 0 !important;
         gap: 0 !important;
     }
+
     .report {
         gap: 0 !important;
     }
+
     .root {
         background: none !important;
         border-radius: 0 !important;
@@ -13,17 +15,19 @@
         /* page-break-after: always; */
         page-break-inside: avoid;
     }
+
     .main {
         border-radius: 0 !important;
     }
-} 
+}
 
 * {
     margin: 0;
     padding: 0;
 }
 
-html, body {
+html,
+body {
     min-width: 8.27in;
 }
 
