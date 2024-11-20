@@ -13,8 +13,8 @@ export class HTMLPort {
             }
 
             Object
-                .entries(settings)
-                .forEach(([key, _]) => settings[key] = report.querySelector(`#${key}`)?.innerText || settings[key]);
+                .keys(settings)
+                .forEach(key => settings[key] = report.querySelector(`#${key}`)?.innerText ?? settings[key]);
 
             this.parts = {
                 fixtops: report.querySelectorAll(".fixtop"),
