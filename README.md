@@ -4,6 +4,3 @@
 
 [GitHub]
 (https://github.com/Nearage)
-
-[HTMLPort]
-(https://nearage.github.io/HTMLPort.html)
