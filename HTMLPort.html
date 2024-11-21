@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style/HTMLPort.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module">
+        import { HTMLPort } from "./script/htmlport/HTMLPort.js";
+
+        window.addEventListener("load", _ => {
+            HTMLPort.run({ width: 6, height: 4, padding: 0.25 });
+        });
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="report">
+        <div id="settings">
+            <span id="width">6</span>
+            <span id="height">4</span>
+            <span id="padding">0.25</span>
+            <span id="pagebreak">always</span>
+        </div>
+        <div class="fixtop" style="background-color: #f60; color: white;">Fixed top</div>
+        <div class="header" style="background-color: #026; color: white;">Header %page%/%pages%</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd;">1 - Page: %page%/%pages%</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc; height: .25in;">2</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd;">3</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc;">4</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd; height: .75in;">5</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc;">6</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd; height: .25in;">7</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc; height: .75in;">8</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd;">9</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc;">10 - Page: %page%/%pages%</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd;">11</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc; height: 1.25in;">12</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd;">13</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc;">14</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd;">15 - Page: %page%/%pages%</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc;">16</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd;">17</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc; height: .25in;">18</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd;">19</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc; height: 1.25in;">20</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd;">21</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc;">22 - Page: %page%/%pages%</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd;">23</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc; height: .25in;">24</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd; height: .75in;">25</div>
+        <div class="footer" style="background-color: #06f; color: white;">Footer %page%/%pages%</div>
+        <div class="append" style="background-color: #f60; color: white;">Append 1</div>
+        <div class="append" style="background-color: #f96; color: white;">Append 2</div>
+        <div class="fixbot" style="background-color: #f9f; color: white;">Fixed bottom</div>
+    </div>
+    <div class="report">
+        <div id="settings">
+            <span id="padding">1</span>
+        </div>
+        <div class="fixtop" style="background-color: #f60; color: white;">Fixed top</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd;">1 - Page: %page%/%pages%</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc; height: .25in;">2</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd;">3</div>
+    </div>
+    <div class="report">
+        <div id="settings">
+            <span id="width">4</span>
+            <span id="height">4</span>
+            <span id="padding">0</span>
+        </div>
+        <div class="record" contentEditable="true" style="background-color: #ddd;">1 - Page: %page%/%pages%</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc; height: .25in;">2</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd;">3</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc;">4</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd; height: .75in;">5</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc;">6</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd; height: .25in;">7</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc; height: .75in;">8</div>
+        <div class="record" contentEditable="true" style="background-color: #ddd;">9</div>
+        <div class="record" contentEditable="true" style="background-color: #ccc;">10 - Page: %page%/%pages%</div>
+        <div class="append" style="background-color: #f60; color: white;">Append 1</div>
+        <div class="footer" style="background-color: #0c9; color: white;">Footer 1 %page%/%pages%</div>
+        <div class="footer" style="background-color: #06f; color: white;">Footer 2 %page%/%pages%</div>
+        <div class="fixbot" style="background-color: #f9f; color: white;">Fixed bottom</div>
+    </div>
+</body>
+
+</html>
