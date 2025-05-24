@@ -1,0 +1,76 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/Administrador/Github/nearage.github.io/rldr",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "BusinessCentralApplicationObject",
+      "source_relative_path": "reference/rldr/Codeunit/Mathx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "reference/rldr/Codeunit/Mathx.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "BusinessCentralApplicationObject",
+      "source_relative_path": "reference/rldr/Module/RLDR.yml",
+      "output": {
+        ".html": {
+          "relative_path": "reference/rldr/Module/RLDR.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "BusinessCentralApplicationObject",
+      "source_relative_path": "reference/rldr/Report/RLDReport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "reference/rldr/Report/RLDReport.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "BusinessCentralApplicationObject",
+      "source_relative_path": "reference/rldr/Table/RLDR-Blank.yml",
+      "output": {
+        ".html": {
+          "relative_path": "reference/rldr/Table/RLDR-Blank.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

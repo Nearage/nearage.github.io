@@ -1,0 +1,20 @@
+﻿### YamlMime:BusinessCentralApplicationObject
+fqName: RLDReport
+alId: ID 50100
+baseKind: Report
+kind: Report
+parent: 'N:Module::RLDR::Namespace::'
+langs:
+- al
+seeAlso:
+- '[Report](https://learn.microsoft.com/dynamics365/business-central/dev-itpro/developer/devenv-report-object)'
+objectProperties:
+- name: RDLCLayout
+  value: ./RLDReport.rdl
+  promoted: false
+- name: RDLCLayout
+  value: ./RLDReport.rdl
+  promoted: false
+commentId: O:Report::RLDReport
+name: RLDReport
+uid: O:Report::RLDReport
