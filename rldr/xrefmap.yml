@@ -25,9 +25,6 @@ references:
 - uid: M:Codeunit::Mathx.Nmod(Decimal,Decimal):Decimal
   name: Nmod
   href: reference/rldr/Codeunit/Mathx.html
-- uid: M:Table::RLDR.NewBlank:Integer
-  name: NewBlank
-  href: reference/rldr/Table/RLDR.html
 - uid: M:Table::RLDR.SetBlank(Integer,Integer):Integer
   name: SetBlank
   href: reference/rldr/Table/RLDR.html
