@@ -4,6 +4,9 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
@@ -35,20 +38,20 @@
     },
     {
       "type": "BusinessCentralApplicationObject",
-      "source_relative_path": "reference/rldr/Report/RLDReport.yml",
+      "source_relative_path": "reference/rldr/Report/RLDR.yml",
       "output": {
         ".html": {
-          "relative_path": "reference/rldr/Report/RLDReport.html"
+          "relative_path": "reference/rldr/Report/RLDR.html"
         }
       },
       "version": ""
     },
     {
       "type": "BusinessCentralApplicationObject",
-      "source_relative_path": "reference/rldr/Table/RLDR-Blank.yml",
+      "source_relative_path": "reference/rldr/Table/RLDR.yml",
       "output": {
         ".html": {
-          "relative_path": "reference/rldr/Table/RLDR-Blank.html"
+          "relative_path": "reference/rldr/Table/RLDR.html"
         }
       },
       "version": ""

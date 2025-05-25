@@ -1,48 +1,51 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
-- uid: F:Table::RLDR_Blank.Number
+- uid: F:Table::RLDR.Number
   name: Number
-  href: reference/rldr/Table/RLDR-Blank.html
-- uid: F:Table::RLDR_Blank.SystemCreatedAt
+  href: reference/rldr/Table/RLDR.html
+- uid: F:Table::RLDR.SystemCreatedAt
   name: SystemCreatedAt
-  href: reference/rldr/Table/RLDR-Blank.html
-- uid: F:Table::RLDR_Blank.SystemCreatedBy
+  href: reference/rldr/Table/RLDR.html
+- uid: F:Table::RLDR.SystemCreatedBy
   name: SystemCreatedBy
-  href: reference/rldr/Table/RLDR-Blank.html
-- uid: F:Table::RLDR_Blank.SystemId
+  href: reference/rldr/Table/RLDR.html
+- uid: F:Table::RLDR.SystemId
   name: SystemId
-  href: reference/rldr/Table/RLDR-Blank.html
-- uid: F:Table::RLDR_Blank.SystemModifiedAt
+  href: reference/rldr/Table/RLDR.html
+- uid: F:Table::RLDR.SystemModifiedAt
   name: SystemModifiedAt
-  href: reference/rldr/Table/RLDR-Blank.html
-- uid: F:Table::RLDR_Blank.SystemModifiedBy
+  href: reference/rldr/Table/RLDR.html
+- uid: F:Table::RLDR.SystemModifiedBy
   name: SystemModifiedBy
-  href: reference/rldr/Table/RLDR-Blank.html
-- uid: F:Table::RLDR_Blank.SystemRowVersion
+  href: reference/rldr/Table/RLDR.html
+- uid: F:Table::RLDR.SystemRowVersion
   name: SystemRowVersion
-  href: reference/rldr/Table/RLDR-Blank.html
+  href: reference/rldr/Table/RLDR.html
 - uid: M:Codeunit::Mathx.Nmod(Decimal,Decimal):Decimal
   name: Nmod
   href: reference/rldr/Codeunit/Mathx.html
-- uid: M:Table::RLDR_Blank.SetBlank(Integer,Integer):Integer
+- uid: M:Table::RLDR.NewBlank:Integer
+  name: NewBlank
+  href: reference/rldr/Table/RLDR.html
+- uid: M:Table::RLDR.SetBlank(Integer,Integer):Integer
   name: SetBlank
-  href: reference/rldr/Table/RLDR-Blank.html
+  href: reference/rldr/Table/RLDR.html
 - uid: N:Module::RLDR
   name: RLDR
   summary: >
     <p sourcefile="reference/rldr/Module/RLDR.yml" sourcestartlinenumber="1" jsonPath="/summary">RLDR implements dynamic structures in RDL reports, showcasing its ability to efficiently manage complex workflows.</p>
-  fqName: RLDR by ADETENA (1.0.0.0)
+  fqName: RLDR by Alejandro J de Tena (1.0.0.0)
   href: reference/rldr/Module/RLDR.html
 - uid: O:Codeunit::Mathx
   name: Mathx
   fqName: Mathx
   href: reference/rldr/Codeunit/Mathx.html
-- uid: O:Report::RLDReport
-  name: RLDReport
-  fqName: RLDReport
-  href: reference/rldr/Report/RLDReport.html
-- uid: O:Table::RLDR_Blank
-  name: "\"RLDR Blank\""
-  fqName: "\"RLDR Blank\""
-  href: reference/rldr/Table/RLDR-Blank.html
+- uid: O:Report::RLDR
+  name: RLDR
+  fqName: RLDR
+  href: reference/rldr/Report/RLDR.html
+- uid: O:Table::RLDR
+  name: RLDR
+  fqName: RLDR
+  href: reference/rldr/Table/RLDR.html

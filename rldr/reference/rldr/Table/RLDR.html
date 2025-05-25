@@ -71,8 +71,8 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="O:Codeunit::Mathx">
-  <h1>Codeunit Mathx</h1>
+        <article data-uid="O:Table::RLDR">
+  <h1>Table RLDR</h1>
 
 
 <div class="font-style-italic">ID 117100</div>
@@ -83,22 +83,134 @@
 
 
 
+  	<h2 id="properties">Properties</h2>
 
+  	<table class="table">
+  		<thead>
+  			<tr>
+  				<th>Name</th>
+  				<th>Value</th>
+  			</tr>
+  		</thead>
+  		<tbody>
+  			<tr>
+  					<td>TableType</td>
+  					<td class="font-style-italic">
+							Temporary
+  					</td>
+  			</tr>
+  		</tbody>
+  	</table>
+  	<h2 id="fields">Fields</h2>
+  	<table class="table">
+  		<thead>
+  			<tr>
+  				<th>Name</th>
+  				<th>Type</th>
+  				<th>Description</th>
+  			</tr>
+  		</thead>
+  		<tbody>
+  				<tr>
+  					<td>Number</td>
+  					<td class="font-style-italic">
+Integer						
+  					</td>
+  					<td></td>
+  				</tr>
+  				<tr>
+  					<td>SystemId</td>
+  					<td class="font-style-italic">
+Guid						
+  					</td>
+  					<td></td>
+  				</tr>
+  				<tr>
+  					<td>SystemCreatedAt</td>
+  					<td class="font-style-italic">
+DateTime						
+  					</td>
+  					<td></td>
+  				</tr>
+  				<tr>
+  					<td>SystemCreatedBy</td>
+  					<td class="font-style-italic">
+Guid						
+  					</td>
+  					<td></td>
+  				</tr>
+  				<tr>
+  					<td>SystemModifiedAt</td>
+  					<td class="font-style-italic">
+DateTime						
+  					</td>
+  					<td></td>
+  				</tr>
+  				<tr>
+  					<td>SystemModifiedBy</td>
+  					<td class="font-style-italic">
+Guid						
+  					</td>
+  					<td></td>
+  				</tr>
+  				<tr>
+  					<td>SystemRowVersion</td>
+  					<td class="font-style-italic">
+BigInteger						
+  					</td>
+  					<td></td>
+  				</tr>
+  		</tbody>
+  	</table>
   	<h2 id="methods">Methods</h2>
-   <h3 class="memberNameHolder">Nmod</h3>
+   <h3 class="memberNameHolder">NewBlank</h3>
    <div class="memberInfo">
 
    		<div class="summaryHolder">
    			<div class="summary">
-				<p>Calculates the modulus (remainder) of two decimal numbers using the formula: A - B * ⌊A / B⌋.
-Unlike the standard operation <code>A mod B = A - B * (A \ B)</code> in AL, which uses truncated integer division
-and may yield incorrect results when A is negative, this implementation uses the <code>Floor</code> function
-to ensure mathematically correct results even with negative values.</p>
+				<p>Initializes a new blank record by incrementing the number, initializing the record,
+and inserting it into the virtual table.</p>
 
    			</div>
    		</div>
 
-   		<pre><code dir="ltr" class="hljs lang-al">procedure Nmod(A: Decimal, B: Decimal): Decimal</code></pre>
+   		<pre><code dir="ltr" class="hljs lang-al">procedure NewBlank(): Integer</code></pre>
+
+
+   			<h4>Returns</h4>
+   			<table class="table">
+   				<thead>
+   					<tr>
+   						<th>Type</th>
+   						<th>Description</th>
+   					</tr>
+   				</thead>
+   				<tbody>
+   					<tr>
+   						<td>
+Integer               </td>
+   						<td>
+							
+   						</td>
+   					</tr>
+   				</tbody>
+   			</table>
+
+
+   </div>
+   <h3 class="memberNameHolder">SetBlank</h3>
+   <div class="memberInfo">
+
+   		<div class="summaryHolder">
+   			<div class="summary">
+				<p>Sets up a blank structure based on the specified number of rows and page size.
+Iterates from the result of <code>NewIndex</code> to the calculated modulus value
+using the <code>Mathx.Nmod</code> function, creating new blank records in each iteration.</p>
+
+   			</div>
+   		</div>
+
+   		<pre><code dir="ltr" class="hljs lang-al">procedure SetBlank(Rows: Integer, Size: Integer): Integer</code></pre>
 
    			<h4>Parameters</h4>
    			<table class="table">
@@ -112,23 +224,30 @@ to ensure mathematically correct results even with negative values.</p>
    				<tbody>
    						<tr>
    							<td>
-								A
+								Rows
    							</td>
    							<td class="font-style-italic">
-Decimal                 </td>
+Integer                 </td>
    							<td>
-								<p>The dividend (can be positive or negative).</p>
+								<p>The number of rows in the dataset.</p>
 
    							</td>
    						</tr>
    						<tr>
    							<td>
-								B
+								Size
    							</td>
    							<td class="font-style-italic">
-Decimal                 </td>
+Integer                 </td>
    							<td>
-								<p>The divisor (must be non-zero).</p>
+								<p>The page size in standard row units.
+It can be calculated using the formula ⌊(p - h - f) / l⌋, where:</p>
+<ul>
+<li><code>p</code> is the total page height.</li>
+<li><code>h</code> is the header height.</li>
+<li><code>f</code> is the footer height.</li>
+<li><code>l</code> is the line height.</li>
+</ul>
 
    							</td>
    						</tr>
@@ -146,9 +265,9 @@ Decimal                 </td>
    				<tbody>
    					<tr>
    						<td>
-Decimal               </td>
+Integer               </td>
    						<td>
-							<p>The remainder of the division of A by B, correctly computed for all sign combinations.</p>
+							<p>An integer representing the final index value after the operation.</p>
 
    						</td>
    					</tr>
@@ -156,15 +275,11 @@ Decimal               </td>
    			</table>
 
 
-   		<h4>Remarks</h4>
-		<p>This formula guarantees that the sign of the result is consistent with the divisor,
-complying with the mathematical definition of the modulus.</p>
-
    </div>
 
   	<h2 id="see-also">See also</h2>
   	<ul>
-  			<li><p><a href="https://learn.microsoft.com/dynamics365/business-central/dev-itpro/developer/devenv-codeunit-object">Codeunit</a></p>
+  			<li><p><a href="https://learn.microsoft.com/dynamics365/business-central/dev-itpro/developer/devenv-table-object">Table</a></p>
 </li>
   	</ul>
 </article>

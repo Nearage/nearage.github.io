@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Welcome to your new reference documentation </title>
+      <title>Features </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Welcome to your new reference documentation ">
+      <meta name="title" content="Features ">
       
       <link rel="icon" href="favicon.ico">
       <link rel="stylesheet" href="public/docfx.min.css">
@@ -72,11 +72,69 @@
         </div>
 
         <article data-uid="">
-<h1 id="welcome-to-your-new-reference-documentation">Welcome to your new reference documentation</h1>
 
-<p>This is the landing page for your generated reference documentation.</p>
-<p>You can use the navigation bar at the top and the table of contents to the left to navigate your documentation.</p>
-<p>You can change this content by editing the index.md file found in <code>&lt;outputfolder&gt;/index.md</code>.</p>
+<p align='center'><img src='logo.png' style='height: 256px'></p>
+<p>RLDR is a technical demonstration project that highlights the use of dynamic structures in RDL reports. This project demonstrates how to efficiently manage complex workflows using dynamic structures in RDLC reports.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Implementation of dynamic structures in RDL reports.</li>
+<li>Efficient management of data and complex workflows.</li>
+<li>Compatible with application platform version 26.0.0.0 and higher.</li>
+<li>Includes support for debugging and source code download.</li>
+</ul>
+<p>For more information, consult the <a href="https://nearage.github.io/rldr">documentation</a>.</p>
+<h2 id="implementation-instructions">Implementation Instructions</h2>
+<h3 id="1-copy-the-default-layout">1. Copy the Default Layout</h3>
+<ol>
+<li>From <strong>Business Central</strong>, access the <code>Report Layouts (9660, List)</code> page.</li>
+<li>Select the <code>RLDR (117100, Report)</code> report from the list <sup><small><a href="#notes">1</a></small></sup>.</li>
+<li>Click the <code>Export Layout</code> button in the action bar at the top.</li>
+<li>Save the file to the desired location.</li>
+</ol>
+<h3 id="2-assign-the-layout-to-the-report">2. Assign the Layout to the Report</h3>
+<p>Configure the <code>RDLCLayout</code> property of your report with the path of the exported layout.</p>
+<h3 id="3-add-the-rldr-column-to-the-main-dataitem">3. Add the <code>RLDR</code> Column to the Main DataItem</h3>
+<p>Add the following column to the main <code>dataitem</code> of the report:</p>
+<pre><code class="lang-al">column(RLDR; RecordId) { }
+</code></pre>
+<p>This is necessary to maintain organized report elements.</p>
+<h3 id="4-add-an-auxiliary-dataitem-_-to-the-report">4. Add an Auxiliary DataItem (<code>_</code>) to the Report</h3>
+<p>Incorporate the following code block into the report to define the additional dataitem <sup><small><a href="#notes">2</a></small></sup>:</p>
+<pre><code class="lang-al">dataitem(_; RLDR)
+{
+    column(Number; Number) { }
+
+    trigger OnPreDataItem()
+    var
+        Rows, Size: Integer;
+    begin
+        Rows := {Rows};
+        Size := {Size};
+
+        SetBlank(Rows, Size);
+    end;
+}
+</code></pre>
+<h3 id="5-configure-the-auxiliary-dataitem">5. Configure the Auxiliary DataItem</h3>
+<p>Replace <code>{Rows}</code> and <code>{Size}</code> with the corresponding values:</p>
+<ul>
+<li><code>{Rows}</code>: the total number of static rows and dataset rows.</li>
+<li><code>{Size}</code>: the number of lines per page. This value should be adjusted according to the report layout.</li>
+</ul>
+<h3 id="6-execute-the-report">6. Execute the Report</h3>
+<p>With minimal adjustments, run the report without filters and verify that the result meets expectations. Otherwise, you may need to make adjustments to the parameters or structure of your report.</p>
+<h3 id="7-customize-the-layout">7. Customize the Layout</h3>
+<p>If the report has executed successfully, you can begin adding the necessary columns and logic to complete the dataset, as well as customize the layout.</p>
+<h2 id="additional-information">Additional Information</h2>
+<ul>
+<li><strong>Publisher:</strong> Alejandro J de Tena</li>
+<li><strong>Version:</strong> 1.0.0.0</li>
+<li><strong>Platform:</strong> 1.0.0.0</li>
+<li><strong>Application:</strong> 26.0.0.0</li>
+</ul>
+<h2 id="notes">Notes</h2>
+<p><a href="#1-copy-the-default-layout">1</a>: The <strong>RLDR</strong> extension must be installed.<br>
+<a href="#4-add-an-auxiliary-dataitem-_-to-the-report">2</a>: Requires a dependency for the <strong>RLDR</strong> package.</p>
 </article>
 
         <div class="contribution d-print-none">
