@@ -94,7 +94,7 @@
 <h3 id="1-copy-the-default-layout">1. Copy the Default Layout</h3>
 <ol>
 <li>From <strong>Business Central</strong>, access the <code>Report Layouts (9660, List)</code> page.</li>
-<li>Select the <code>RLDR (117100, Report)</code> report from the list <sup><small><a href="#notes">1</a></small></sup>.</li>
+<li>Select any of the <code>RLDR (Report)</code> report from the list <sup><small><a href="#notes">1</a>, <a href="#notes">2</a></small></sup>.</li>
 <li>Click the <code>Export Layout</code> button in the action bar at the top.</li>
 <li>Save the file to the desired location.</li>
 </ol>
@@ -107,7 +107,7 @@
 </code></pre>
 <p>This is necessary to maintain organized report elements.</p>
 <h3 id="4-add-an-auxiliary-dataitem-_-to-the-report">4. Add an Auxiliary DataItem (<code>_</code>) to the Report</h3>
-<p>Incorporate the following code block into the report to define the additional dataitem <sup><small><a href="#notes">2</a></small></sup>:</p>
+<p>Incorporate the following code block into the report to define the additional dataitem <sup><small><a href="#notes">3</a></small></sup>:</p>
 <pre><code class="lang-al">dataitem(_; RLDR)
 {
     column(Number; Number) { }
@@ -127,7 +127,7 @@
 <p>Replace <code>{Rows}</code> and <code>{Size}</code> with the corresponding values:</p>
 <ul>
 <li><code>{Rows}</code>: the total number of static rows and dataset rows.</li>
-<li><code>{Size}</code>: the number of lines per page. This value should be adjusted according to the report layout <sup><small><a href="#notes">3</a></small></sup>.</li>
+<li><code>{Size}</code>: the number of lines per page. This value should be adjusted according to the report layout <sup><small><a href="#notes">4</a></small></sup>.</li>
 </ul>
 <h3 id="6-execute-the-report">6. Execute the Report</h3>
 <p>With minimal adjustments, run the report without filters and verify that the result meets expectations. Otherwise, you may need to make adjustments to the parameters or structure of your report.</p>
@@ -142,8 +142,9 @@
 </ul>
 <h2 id="notes">Notes</h2>
 <p><a href="#1-copy-the-default-layout">1</a>: The <strong>RLDR</strong> extension must be installed.<br>
-<a href="#4-add-an-auxiliary-dataitem-_-to-the-report">2</a>: Requires a dependency for the <strong>RLDR</strong> package.<br>
-<a href="#5-configure-the-auxiliary-dataitem">3</a>: See <a href="https://nearage.github.io/rldr/reference/rldr/Table/RLDR.html">Table RLDR</a>.</p>
+<a href="#1-copy-the-default-layout">2</a>: There are different layout designs for different report templates. Choose the one that fit your requirements better.<br>
+<a href="#4-add-an-auxiliary-dataitem-_-to-the-report">3</a>: Requires a dependency for the <strong>RLDR</strong> package.<br>
+<a href="#5-configure-the-auxiliary-dataitem">4</a>: See <a href="https://nearage.github.io/rldr/reference/rldr/Table/RLDR.html">Table RLDR</a>.</p>
 </article>
 
         <div class="contribution d-print-none">
