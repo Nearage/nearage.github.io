@@ -100,7 +100,8 @@
 </ol>
 <h3 id="2-assign-the-layout-to-the-report">2. Assign the Layout to the Report</h3>
 <p>Configure the <code>RDLCLayout</code> property of your report with the path of the exported layout.</p>
-<h3 id="3-add-the-rldr-column-to-the-main-dataitem">3. Add the <code>RLDR</code> Column to the Main DataItem</h3>
+<h3 id="3-configure-the-main-dataitem-and-add-the-rldr-column">3. Configure the Main DataItem and add the <code>RLDR</code> Column</h3>
+<p>Set the <code>PrintOnlyIfDetail</code> property of the main dataitem to <code>true</code>. This ensures that the report only prints when there are details to show.</p>
 <p>Add the following column to the main <code>dataitem</code> of the report:</p>
 <pre><code class="lang-al">column(RLDR; RecordId) { }
 </code></pre>
@@ -136,8 +137,8 @@
 <ul>
 <li><strong>Publisher:</strong> Alejandro J de Tena</li>
 <li><strong>Version:</strong> 1.0.0.0</li>
-<li><strong>Platform:</strong> 26.0.0.0</li>
-<li><strong>Application:</strong> 26.0.0.0</li>
+<li><strong>Platform:</strong> 21.0.0.0</li>
+<li><strong>Application:</strong> 21.0.0.0</li>
 </ul>
 <h2 id="notes">Notes</h2>
 <p><a href="#1-copy-the-default-layout">1</a>: The <strong>RLDR</strong> extension must be installed.<br>

@@ -42,6 +42,10 @@ references:
   name: RLDR
   fqName: RLDR
   href: reference/rldr/Report/RLDR.html
+- uid: O:Report::RLDR2
+  name: RLDR2
+  fqName: RLDR2
+  href: reference/rldr/Report/RLDR2.html
 - uid: O:Table::RLDR
   name: RLDR
   fqName: RLDR
