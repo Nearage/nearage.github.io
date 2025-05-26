@@ -38,10 +38,6 @@ references:
   name: Mathx
   fqName: Mathx
   href: reference/rldr/Codeunit/Mathx.html
-- uid: O:Report::RLDR
-  name: RLDR
-  fqName: RLDR
-  href: reference/rldr/Report/RLDR.html
 - uid: O:Report::RLDR1
   name: RLDR1
   fqName: RLDR1
