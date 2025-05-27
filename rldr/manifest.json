@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/Administrador/RLDR",
+  "source_base_path": "C:/Users/Administrador/Documents/RLDR",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -52,6 +52,16 @@
       "output": {
         ".html": {
           "relative_path": "reference/rldr/Report/RLDR2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "BusinessCentralApplicationObject",
+      "source_relative_path": "reference/rldr/Report/RLDR3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "reference/rldr/Report/RLDR3.html"
         }
       },
       "version": ""
