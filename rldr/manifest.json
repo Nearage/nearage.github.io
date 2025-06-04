@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/Administrador/Documents/RLDR 1.0.0.3",
+  "source_base_path": "C:/Users/Administrador/Documents/RLDR_1-0-0-4",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -12,6 +12,16 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "BusinessCentralApplicationObject",
+      "source_relative_path": "reference/rldr/Codeunit/Enumx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "reference/rldr/Codeunit/Enumx.html"
         }
       },
       "version": ""
@@ -38,30 +48,30 @@
     },
     {
       "type": "BusinessCentralApplicationObject",
-      "source_relative_path": "reference/rldr/Report/RLDR1.yml",
+      "source_relative_path": "reference/rldr/Report/RLDR-Ver.-1.yml",
       "output": {
         ".html": {
-          "relative_path": "reference/rldr/Report/RLDR1.html"
+          "relative_path": "reference/rldr/Report/RLDR-Ver.-1.html"
         }
       },
       "version": ""
     },
     {
       "type": "BusinessCentralApplicationObject",
-      "source_relative_path": "reference/rldr/Report/RLDR2.yml",
+      "source_relative_path": "reference/rldr/Report/RLDR-Ver.-2.yml",
       "output": {
         ".html": {
-          "relative_path": "reference/rldr/Report/RLDR2.html"
+          "relative_path": "reference/rldr/Report/RLDR-Ver.-2.html"
         }
       },
       "version": ""
     },
     {
       "type": "BusinessCentralApplicationObject",
-      "source_relative_path": "reference/rldr/Report/RLDR3.yml",
+      "source_relative_path": "reference/rldr/Report/RLDR-Ver.-3.yml",
       "output": {
         ".html": {
-          "relative_path": "reference/rldr/Report/RLDR3.html"
+          "relative_path": "reference/rldr/Report/RLDR-Ver.-3.html"
         }
       },
       "version": ""

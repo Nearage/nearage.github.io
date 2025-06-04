@@ -71,102 +71,70 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="O:Codeunit::Mathx">
-  <h1>Codeunit Mathx</h1>
+        <article data-uid="O:Report::RLDR_Ver#_2">
+  <h1>Report &quot;RLDR Ver. 2&quot;</h1>
 
 
-<div class="font-style-italic">ID 97700</div>
-
-
-
+<div class="font-style-italic">ID 97701</div>
 
 
 
 
 
-  	<h2 id="methods">Methods</h2>
-   <h3 class="memberNameHolder">Nmod</h3>
-   <div class="memberInfo">
-
-   		<div class="summaryHolder">
-   			<div class="summary">
-				<p>Calculates the modulus (remainder) of two decimal numbers using the
-formula: A - B * ⌊A / B⌋. Unlike the standard operation
-<code>A mod B = A - B * (A \ B)</code> in AL, which uses truncated integer
-division and may yield incorrect results when A is negative, this
-implementation uses the <code>Floor</code> function to ensure mathematically
-correct results even with negative values.</p>
-
-   			</div>
-   		</div>
-
-   		<pre><code dir="ltr" class="hljs lang-al">procedure Nmod(A: Decimal, B: Decimal): Decimal</code></pre>
-
-   			<h4>Parameters</h4>
-   			<table class="table">
-   				<thead>
-   					<tr>
-   						<th>Name</th>
-   						<th>Type</th>
-   						<th>Description</th>
-   					</tr>
-   				</thead>
-   				<tbody>
-   						<tr>
-   							<td>
-								A
-   							</td>
-   							<td class="font-style-italic">
-Decimal                 </td>
-   							<td>
-								<p>The dividend (can be positive or negative).</p>
-
-   							</td>
-   						</tr>
-   						<tr>
-   							<td>
-								B
-   							</td>
-   							<td class="font-style-italic">
-Decimal                 </td>
-   							<td>
-								<p>The divisor (must be non-zero).</p>
-
-   							</td>
-   						</tr>
-   				</tbody>
-   			</table>
-
-   			<h4>Returns</h4>
-   			<table class="table">
-   				<thead>
-   					<tr>
-   						<th>Type</th>
-   						<th>Description</th>
-   					</tr>
-   				</thead>
-   				<tbody>
-   					<tr>
-   						<td>
-Decimal               </td>
-   						<td>
-							<p>The remainder of the division of A by B.</p>
-
-   						</td>
-   					</tr>
-   				</tbody>
-   			</table>
 
 
-   		<h4>Remarks</h4>
-		<p>This formula guarantees that the sign of the result is consistent with
-the divisor, complying with the mathematical definition of the modulus.</p>
+  	<h2 id="properties">Properties</h2>
 
-   </div>
+  	<table class="table">
+  		<thead>
+  			<tr>
+  				<th>Name</th>
+  				<th>Value</th>
+  			</tr>
+  		</thead>
+  		<tbody>
+  			<tr>
+  					<td>ApplicationArea</td>
+  					<td class="font-style-italic">
+							#All
+  					</td>
+  			</tr>
+  			<tr>
+  					<td>Caption</td>
+  					<td class="font-style-italic">
+							RLDR Ver. 2
+  					</td>
+  			</tr>
+  			<tr>
+  					<td>RDLCLayout</td>
+  					<td class="font-style-italic">
+							./src/layout/RLDR2.rdl
+  					</td>
+  			</tr>
+  			<tr>
+  					<td>ApplicationArea</td>
+  					<td class="font-style-italic">
+							#All
+  					</td>
+  			</tr>
+  			<tr>
+  					<td>Caption</td>
+  					<td class="font-style-italic">
+							RLDR Ver. 2
+  					</td>
+  			</tr>
+  			<tr>
+  					<td>RDLCLayout</td>
+  					<td class="font-style-italic">
+							./src/layout/RLDR2.rdl
+  					</td>
+  			</tr>
+  		</tbody>
+  	</table>
 
   	<h2 id="see-also">See also</h2>
   	<ul>
-  			<li><p><a href="https://learn.microsoft.com/dynamics365/business-central/dev-itpro/developer/devenv-codeunit-object">Codeunit</a></p>
+  			<li><p><a href="https://learn.microsoft.com/dynamics365/business-central/dev-itpro/developer/devenv-report-object">Report</a></p>
 </li>
   	</ul>
 </article>
