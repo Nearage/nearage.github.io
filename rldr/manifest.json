@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/Administrador/Documents/RLDR_1-0-0-4",
+  "source_base_path": "C:/Users/Administrador/RLDR_1-0-0-5",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -42,6 +42,16 @@
       "output": {
         ".html": {
           "relative_path": "reference/rldr/Module/RLDR.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "BusinessCentralObsoletionList",
+      "source_relative_path": "reference/rldr/Obsoletion/obsolete_by_[Untagged].yml",
+      "output": {
+        ".html": {
+          "relative_path": "reference/rldr/Obsoletion/obsolete_by_[Untagged].html"
         }
       },
       "version": ""

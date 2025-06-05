@@ -86,7 +86,7 @@
 <h2 id="implementation-instructions">Implementation Instructions</h2>
 <h3 id="prerequisites">Prerequisites</h3>
 <ol>
-<li>Download the latest <a href="./Alejandro%20J%20de%20Tena_RLDR_1.0.0.4.app">RLDR</a> package.</li>
+<li>Download the latest <a href="./Alejandro%20J%20de%20Tena_RLDR_1.0.0.5.app">RLDR</a> package.</li>
 <li><strong>Upload</strong> and <strong>install</strong> the downloaded package to <strong>Business Central</strong>.</li>
 <li>Declare a new dependency for the RLDR package in your project.</li>
 <li>Download symbols for the new package.</li>
@@ -110,24 +110,30 @@
 <p>Incorporate the following code block into the report to define the additional dataitem <sup><small><a href="#notes">3</a></small></sup>:</p>
 <pre><code class="lang-al">dataitem(_; RLDR)
 {
-    column(Number; Number) { }
+    column(RecordId; RecordId) { }
 
     trigger OnPreDataItem()
     var
-        Rows, Size: Integer;
+        &quot;Format&quot;, &quot;Length&quot;, &quot;Static&quot;, &quot;Repeat&quot;, &quot;StdLin&quot; : Decimal;
     begin
-        Rows := {Rows};
-        Size := {Size};
+        &quot;Format&quot; := {Format};
+        &quot;Length&quot; := {Length};
+        &quot;Static&quot; := {Static};
+        &quot;Repeat&quot; := {Repeat};
+        &quot;StdLin&quot; := {StdLin};
 
-        SetBlank(Rows, Size);
+        Use(&quot;Format&quot;, &quot;Length&quot;, &quot;Static&quot;, &quot;Repeat&quot;, &quot;StdLin&quot;);
     end;
 }
 </code></pre>
 <h3 id="5-configure-the-auxiliary-dataitem">5. Configure the Auxiliary DataItem</h3>
-<p>Replace <code>{Rows}</code> and <code>{Size}</code> with the corresponding values:</p>
+<p>Replace <code>{Format}</code>, <code>{Length}</code>, <code>{Static}</code>, <code>{Repeat}</code>, and <code>{StdLin}</code> with the corresponding values:</p>
 <ul>
-<li><code>{Rows}</code>: the total number of static rows and dataset rows.</li>
-<li><code>{Size}</code>: the number of lines per page. This value should be adjusted according to the report layout <sup><small><a href="#notes">4</a></small></sup>.</li>
+<li><code>{Format}</code>: the paper height.</li>
+<li><code>{Length}</code>: the number of rows in the dataset.</li>
+<li><code>{Static}</code>: the number of static (non-repeated) rows.</li>
+<li><code>{Repeat}</code>: the number of repeated rows.</li>
+<li><code>{StdLin}</code>: the standard line height.</li>
 </ul>
 <h3 id="6-execute-the-report">6. Execute the Report</h3>
 <p>With minimal adjustments, run the report without filters and verify that the result meets expectations. Otherwise, you may need to make adjustments to the parameters or structure of your report.</p>
@@ -136,7 +142,7 @@
 <h2 id="additional-information">Additional Information</h2>
 <ul>
 <li><strong>Publisher:</strong> Alejandro J de Tena</li>
-<li><strong>Version:</strong> 1.0.0.4</li>
+<li><strong>Version:</strong> 1.0.0.5</li>
 <li><strong>Platform:</strong> 21.0.0.0</li>
 <li><strong>Application:</strong> 21.0.0.0</li>
 </ul>

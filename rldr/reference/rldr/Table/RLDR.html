@@ -171,17 +171,14 @@ BigInteger
   	<h2 id="methods">Methods</h2>
    <h3 class="memberNameHolder">SetBlank</h3>
    <div class="memberInfo">
+    	<div class="CAUTION alert alert-danger alert-is-danger">
+    		<h5 class="alert-title">Obsolete</h5>
+    			<p>This element will become obsolete from version . Replaced by Use() method.</p>
+    	</div>
 
-   		<div class="summaryHolder">
-   			<div class="summary">
-				<p>Sets up a blank structure based on the specified number of rows and page size.
-Iterates from the result of <code>NewIndex</code> to the calculated modulus value
-using the <code>Mathx.Nmod</code> function, creating new blank records in each iteration.</p>
 
-   			</div>
-   		</div>
-
-   		<pre><code dir="ltr" class="hljs lang-al">procedure SetBlank(Rows: Integer, Size: Integer): Integer</code></pre>
+   		<pre><code dir="ltr" class="hljs lang-al">[Obsolete(Replaced by Use() method.)]
+procedure SetBlank(Rows: Integer, Size: Integer): Integer</code></pre>
 
    			<h4>Parameters</h4>
    			<table class="table">
@@ -200,8 +197,7 @@ using the <code>Mathx.Nmod</code> function, creating new blank records in each i
    							<td class="font-style-italic">
 Integer                 </td>
    							<td>
-								<p>The number of rows in the dataset.</p>
-
+								
    							</td>
    						</tr>
    						<tr>
@@ -211,15 +207,7 @@ Integer                 </td>
    							<td class="font-style-italic">
 Integer                 </td>
    							<td>
-								<p>The page size in standard row units.
-It can be calculated using the formula ⌊(p - h - f) / l⌋, where:</p>
-<ul>
-<li><code>p</code> is the total page height.</li>
-<li><code>h</code> is the header height.</li>
-<li><code>f</code> is the footer height.</li>
-<li><code>l</code> is the line height.</li>
-</ul>
-
+								
    							</td>
    						</tr>
    				</tbody>
@@ -238,8 +226,7 @@ It can be calculated using the formula ⌊(p - h - f) / l⌋, where:</p>
    						<td>
 Integer               </td>
    						<td>
-							<p>An integer representing the final index value after the operation.</p>
-
+							
    						</td>
    					</tr>
    				</tbody>
