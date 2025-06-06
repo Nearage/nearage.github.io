@@ -90,10 +90,12 @@
 
    		<div class="summaryHolder">
    			<div class="summary">
-				<p>Calculates the modulus (remainder) of two decimal numbers using the formula: A - B * ⌊A / B⌋.
-Unlike the standard operation <code>A mod B = A - B * (A \ B)</code> in AL, which uses truncated integer division
-and may yield incorrect results when A is negative, this implementation uses the <code>Floor</code> function
-to ensure mathematically correct results even with negative values.</p>
+				<p>Calculates the modulus (remainder) of two decimal numbers using the
+formula: A - B * ⌊A / B⌋. Unlike the standard operation
+<code>A mod B = A - B * (A \ B)</code> in AL, which uses truncated integer
+division and may yield incorrect results when A is negative, this
+implementation uses the <code>Floor</code> function to ensure mathematically
+correct results even with negative values.</p>
 
    			</div>
    		</div>
@@ -148,7 +150,7 @@ Decimal                 </td>
    						<td>
 Decimal               </td>
    						<td>
-							<p>The remainder of the division of A by B, correctly computed for all sign combinations.</p>
+							<p>The remainder of the division of A by B.</p>
 
    						</td>
    					</tr>
@@ -157,8 +159,8 @@ Decimal               </td>
 
 
    		<h4>Remarks</h4>
-		<p>This formula guarantees that the sign of the result is consistent with the divisor,
-complying with the mathematical definition of the modulus.</p>
+		<p>This formula guarantees that the sign of the result is consistent with
+the divisor, complying with the mathematical definition of the modulus.</p>
 
    </div>
 

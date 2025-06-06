@@ -171,17 +171,14 @@ BigInteger
   	<h2 id="methods">Methods</h2>
    <h3 class="memberNameHolder">SetBlank</h3>
    <div class="memberInfo">
+    	<div class="CAUTION alert alert-danger alert-is-danger">
+    		<h5 class="alert-title">Obsolete</h5>
+    			<p>This element will become obsolete from version . Replaced by Use() method.</p>
+    	</div>
 
-   		<div class="summaryHolder">
-   			<div class="summary">
-				<p>Sets up a blank structure based on the specified number of rows and page size.
-Iterates from the result of <code>NewIndex</code> to the calculated modulus value
-using the <code>Mathx.Nmod</code> function, creating new blank records in each iteration.</p>
 
-   			</div>
-   		</div>
-
-   		<pre><code dir="ltr" class="hljs lang-al">procedure SetBlank(Rows: Integer, Size: Integer): Integer</code></pre>
+   		<pre><code dir="ltr" class="hljs lang-al">[Obsolete(Replaced by Use() method.)]
+procedure SetBlank(Rows: Integer, Size: Integer): Integer</code></pre>
 
    			<h4>Parameters</h4>
    			<table class="table">
@@ -200,8 +197,7 @@ using the <code>Mathx.Nmod</code> function, creating new blank records in each i
    							<td class="font-style-italic">
 Integer                 </td>
    							<td>
-								<p>The number of rows in the dataset.</p>
-
+								
    							</td>
    						</tr>
    						<tr>
@@ -211,14 +207,108 @@ Integer                 </td>
    							<td class="font-style-italic">
 Integer                 </td>
    							<td>
-								<p>The page size in standard row units.
-It can be calculated using the formula ⌊(p - h - f) / l⌋, where:</p>
-<ul>
-<li><code>p</code> is the total page height.</li>
-<li><code>h</code> is the header height.</li>
-<li><code>f</code> is the footer height.</li>
-<li><code>l</code> is the line height.</li>
-</ul>
+								
+   							</td>
+   						</tr>
+   				</tbody>
+   			</table>
+
+   			<h4>Returns</h4>
+   			<table class="table">
+   				<thead>
+   					<tr>
+   						<th>Type</th>
+   						<th>Description</th>
+   					</tr>
+   				</thead>
+   				<tbody>
+   					<tr>
+   						<td>
+Integer               </td>
+   						<td>
+							
+   						</td>
+   					</tr>
+   				</tbody>
+   			</table>
+
+
+   </div>
+   <h3 class="memberNameHolder">Use</h3>
+   <div class="memberInfo">
+
+   		<div class="summaryHolder">
+   			<div class="summary">
+				<p>Initializes a blank structure based on the specified parameters.</p>
+
+   			</div>
+   		</div>
+
+   		<pre><code dir="ltr" class="hljs lang-al">procedure Use(Format: Decimal, Length: Decimal, Static: Decimal, Repeat: Decimal, StdLin: Decimal): Integer</code></pre>
+
+   			<h4>Parameters</h4>
+   			<table class="table">
+   				<thead>
+   					<tr>
+   						<th>Name</th>
+   						<th>Type</th>
+   						<th>Description</th>
+   					</tr>
+   				</thead>
+   				<tbody>
+   						<tr>
+   							<td>
+								Format
+   							</td>
+   							<td class="font-style-italic">
+Decimal                 </td>
+   							<td>
+								<p>The total page height.</p>
+
+   							</td>
+   						</tr>
+   						<tr>
+   							<td>
+								Length
+   							</td>
+   							<td class="font-style-italic">
+Decimal                 </td>
+   							<td>
+								<p>The number of rows in the dataset.</p>
+
+   							</td>
+   						</tr>
+   						<tr>
+   							<td>
+								Static
+   							</td>
+   							<td class="font-style-italic">
+Decimal                 </td>
+   							<td>
+								<p>The height of the static content.</p>
+
+   							</td>
+   						</tr>
+   						<tr>
+   							<td>
+								Repeat
+   							</td>
+   							<td class="font-style-italic">
+Decimal                 </td>
+   							<td>
+								<p>The height of the repeated content.</p>
+
+   							</td>
+   						</tr>
+   						<tr>
+   							<td>
+								StdLin
+   							</td>
+   							<td class="font-style-italic">
+Decimal                 </td>
+   							<td>
+								<p>The standard line height, which is the height of a
+single line in the dataset.</p>
 
    							</td>
    						</tr>
@@ -238,13 +328,17 @@ It can be calculated using the formula ⌊(p - h - f) / l⌋, where:</p>
    						<td>
 Integer               </td>
    						<td>
-							<p>An integer representing the final index value after the operation.</p>
+							<p>The final index value after the operation.</p>
 
    						</td>
    					</tr>
    				</tbody>
    			</table>
 
+
+   		<h4>Remarks</h4>
+		<p>All specified parameters must be in the same unit of measurement (using
+inches is recommended).</p>
 
    </div>
 

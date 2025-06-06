@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/adetena/Documents/RLDR2",
+  "source_base_path": "C:/Users/adetena/Documents/RLDR_1-0-0-6",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -12,6 +12,16 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "BusinessCentralApplicationObject",
+      "source_relative_path": "reference/rldr/Codeunit/Enumx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "reference/rldr/Codeunit/Enumx.html"
         }
       },
       "version": ""
@@ -37,21 +47,41 @@
       "version": ""
     },
     {
-      "type": "BusinessCentralApplicationObject",
-      "source_relative_path": "reference/rldr/Report/RLDR1.yml",
+      "type": "BusinessCentralObsoletionList",
+      "source_relative_path": "reference/rldr/Obsoletion/obsolete_by_[Untagged].yml",
       "output": {
         ".html": {
-          "relative_path": "reference/rldr/Report/RLDR1.html"
+          "relative_path": "reference/rldr/Obsoletion/obsolete_by_[Untagged].html"
         }
       },
       "version": ""
     },
     {
       "type": "BusinessCentralApplicationObject",
-      "source_relative_path": "reference/rldr/Report/RLDR2.yml",
+      "source_relative_path": "reference/rldr/Report/RLDR-Ver.-1.yml",
       "output": {
         ".html": {
-          "relative_path": "reference/rldr/Report/RLDR2.html"
+          "relative_path": "reference/rldr/Report/RLDR-Ver.-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "BusinessCentralApplicationObject",
+      "source_relative_path": "reference/rldr/Report/RLDR-Ver.-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "reference/rldr/Report/RLDR-Ver.-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "BusinessCentralApplicationObject",
+      "source_relative_path": "reference/rldr/Report/RLDR-Ver.-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "reference/rldr/Report/RLDR-Ver.-3.html"
         }
       },
       "version": ""
