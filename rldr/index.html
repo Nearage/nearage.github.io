@@ -84,29 +84,29 @@
 </ul>
 <p>For more information, consult the <a href="https://nearage.github.io/rldr">documentation</a>.</p>
 <h1 id="implementation-instructions">Implementation Instructions</h1>
-<h3 id="prerequisites">Prerequisites</h3>
+<h2 id="prerequisites">Prerequisites</h2>
 <ol>
 <li>Download the latest <a href="./Alejandro%20J%20de%20Tena_RLDR_1.0.0.6.app">RLDR</a> package.</li>
 <li><strong>Upload</strong> and <strong>install</strong> the downloaded package to <strong>Business Central</strong>.</li>
 <li>Declare a new dependency for the RLDR package in your project.</li>
 <li>Download symbols for the new package.</li>
 </ol>
-<h3 id="1-copy-the-default-layout">1. Copy the Default Layout</h3>
+<h2 id="1-copy-the-default-layout">1. Copy the Default Layout</h2>
 <ol>
 <li>From <strong>Business Central</strong>, access the <code>Report Layouts (9660, List)</code> page.</li>
 <li>Select any of the <code>RLDR (Report)</code> report from the list <sup><small><a href="#notes">1</a>, <a href="#notes">2</a></small></sup>.</li>
 <li>Click the <code>Export Layout</code> button in the action bar at the top.</li>
 <li>Save the file to the desired location.</li>
 </ol>
-<h3 id="2-assign-the-layout-to-the-report">2. Assign the Layout to the Report</h3>
+<h2 id="2-assign-the-layout-to-the-report">2. Assign the Layout to the Report</h2>
 <p>Configure the <code>RDLCLayout</code> property of your report with the path of the exported layout.</p>
-<h3 id="3-configure-the-main-dataitem-and-add-the-rldr-column">3. Configure the Main DataItem and add the <code>RLDR</code> Column</h3>
+<h2 id="3-configure-the-main-dataitem-and-add-the-rldr-column">3. Configure the Main DataItem and add the <code>RLDR</code> Column</h2>
 <p>Set the <code>PrintOnlyIfDetail</code> property of the main dataitem to <code>true</code>. This ensures that the report only prints when there are details to show.</p>
 <p>Add the following column to the main <code>dataitem</code> of the report:</p>
 <pre><code class="lang-al">column(RLDR; RecordId) { }
 </code></pre>
 <p>This is necessary to maintain organized report elements.</p>
-<h3 id="4-add-an-auxiliary-dataitem-_-to-the-report">4. Add an Auxiliary DataItem (<code>_</code>) to the Report</h3>
+<h2 id="4-add-an-auxiliary-dataitem-_-to-the-report">4. Add an Auxiliary DataItem (<code>_</code>) to the Report</h2>
 <p>Incorporate the following code block into the report to define the additional dataitem <sup><small><a href="#notes">3</a></small></sup>:</p>
 <pre><code class="lang-al">dataitem(_; RLDR)
 {
@@ -126,7 +126,7 @@
     end;
 }
 </code></pre>
-<h3 id="5-configure-the-auxiliary-dataitem">5. Configure the Auxiliary DataItem</h3>
+<h2 id="5-configure-the-auxiliary-dataitem">5. Configure the Auxiliary DataItem</h2>
 <p>Replace <code>{Format}</code>, <code>{Length}</code>, <code>{Static}</code>, <code>{Repeat}</code>, and <code>{StdLin}</code> with the corresponding values:</p>
 <ul>
 <li><code>{Format}</code>: the paper height.</li>
@@ -135,9 +135,9 @@
 <li><code>{Repeat}</code>: the number of repeated rows.</li>
 <li><code>{StdLin}</code>: the standard line height.</li>
 </ul>
-<h3 id="6-execute-the-report">6. Execute the Report</h3>
+<h2 id="6-execute-the-report">6. Execute the Report</h2>
 <p>With minimal adjustments, run the report without filters and verify that the result meets expectations. Otherwise, you may need to make adjustments to the parameters or structure of your report.</p>
-<h3 id="7-customize-the-layout">7. Customize the Layout</h3>
+<h2 id="7-customize-the-layout">7. Customize the Layout</h2>
 <p>If the report has executed successfully, you can begin adding the necessary columns and logic to complete the dataset, as well as customize the layout.</p>
 <h1 id="additional-information">Additional Information</h1>
 <ul>
