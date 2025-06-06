@@ -41,7 +41,7 @@ references:
   name: RLDR
   summary: >
     <p sourcefile="reference/rldr/Module/RLDR.yml" sourcestartlinenumber="1" jsonPath="/summary">RLDR implements dynamic structures in RDL reports, showcasing its ability to efficiently manage complex workflows.</p>
-  fqName: RLDR by Alejandro J de Tena (1.0.0.6)
+  fqName: RLDR by Alejandro J de Tena (1.0.0.7)
   href: reference/rldr/Module/RLDR.html
 - uid: N:Module::RLDR_obsolete_by_[Untagged]
   tag: '[Untagged]'
