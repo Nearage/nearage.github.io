@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/Users/adetena/Documents/RLDR_2-0-0-3",
+  "source_base_path": "C:/Users/adetena/Documents/RLDR_2-0-0-4",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -58,6 +58,16 @@
       "output": {
         ".html": {
           "relative_path": "reference/rldr/Report/RLDRDemo1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "BusinessCentralApplicationObject",
+      "source_relative_path": "reference/rldr/Report/RLDRDemo2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "reference/rldr/Report/RLDRDemo2.html"
         }
       },
       "version": ""
