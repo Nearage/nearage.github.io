@@ -1,10 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
       <title> </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content=" ">
+      
       
       <link rel="icon" href="../../../favicon.ico">
       <link rel="stylesheet" href="../../../public/docfx.min.css">
@@ -16,19 +17,27 @@
       
       
       
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module">
-    import options from './../../../public/main.js'
-    import { init } from './../../../public/docfx.min.js'
-    init(options)
-  </script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
     <header class="bg-body border-bottom">
@@ -64,7 +73,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -169,82 +178,18 @@ BigInteger
   		</tbody>
   	</table>
   	<h2 id="methods">Methods</h2>
-   <h3 class="memberNameHolder">SetBlank</h3>
-   <div class="memberInfo">
-    	<div class="CAUTION alert alert-danger alert-is-danger">
-    		<h5 class="alert-title">Obsolete</h5>
-    			<p>This element will become obsolete from version . Replaced by Use() method.</p>
-    	</div>
-
-
-   		<pre><code dir="ltr" class="hljs lang-al">[Obsolete(Replaced by Use() method.)]
-procedure SetBlank(Rows: Integer, Size: Integer): Integer</code></pre>
-
-   			<h4>Parameters</h4>
-   			<table class="table">
-   				<thead>
-   					<tr>
-   						<th>Name</th>
-   						<th>Type</th>
-   						<th>Description</th>
-   					</tr>
-   				</thead>
-   				<tbody>
-   						<tr>
-   							<td>
-								Rows
-   							</td>
-   							<td class="font-style-italic">
-Integer                 </td>
-   							<td>
-								
-   							</td>
-   						</tr>
-   						<tr>
-   							<td>
-								Size
-   							</td>
-   							<td class="font-style-italic">
-Integer                 </td>
-   							<td>
-								
-   							</td>
-   						</tr>
-   				</tbody>
-   			</table>
-
-   			<h4>Returns</h4>
-   			<table class="table">
-   				<thead>
-   					<tr>
-   						<th>Type</th>
-   						<th>Description</th>
-   					</tr>
-   				</thead>
-   				<tbody>
-   					<tr>
-   						<td>
-Integer               </td>
-   						<td>
-							
-   						</td>
-   					</tr>
-   				</tbody>
-   			</table>
-
-
-   </div>
    <h3 class="memberNameHolder">Use</h3>
    <div class="memberInfo">
 
    		<div class="summaryHolder">
    			<div class="summary">
-				<p>Initializes a blank structure based on the specified parameters.</p>
+				<p>Use the RLDR table to calculate the number of blank lines needed
+to fill a page based on the provided parameters.</p>
 
    			</div>
    		</div>
 
-   		<pre><code dir="ltr" class="hljs lang-al">procedure Use(Format: Decimal, Length: Decimal, Static: Decimal, Repeat: Decimal, StdLin: Decimal): Integer</code></pre>
+   		<pre><code dir="ltr" class="hljs lang-al">procedure Use(PageHeight: Decimal, DataCount: Decimal, StaticHeight: Decimal, DynamicHeight: Decimal, LineHeight: Decimal): Integer</code></pre>
 
    			<h4>Parameters</h4>
    			<table class="table">
@@ -258,29 +203,29 @@ Integer               </td>
    				<tbody>
    						<tr>
    							<td>
-								Format
+								PageHeight
    							</td>
    							<td class="font-style-italic">
 Decimal                 </td>
    							<td>
-								<p>The total page height.</p>
+								<p>The height of the page.</p>
 
    							</td>
    						</tr>
    						<tr>
    							<td>
-								Length
+								DataCount
    							</td>
    							<td class="font-style-italic">
 Decimal                 </td>
    							<td>
-								<p>The number of rows in the dataset.</p>
+								<p>The number of data rows to be displayed.</p>
 
    							</td>
    						</tr>
    						<tr>
    							<td>
-								Static
+								StaticHeight
    							</td>
    							<td class="font-style-italic">
 Decimal                 </td>
@@ -291,24 +236,23 @@ Decimal                 </td>
    						</tr>
    						<tr>
    							<td>
-								Repeat
+								DynamicHeight
    							</td>
    							<td class="font-style-italic">
 Decimal                 </td>
    							<td>
-								<p>The height of the repeated content.</p>
+								<p>The height of the dynamic content.</p>
 
    							</td>
    						</tr>
    						<tr>
    							<td>
-								StdLin
+								LineHeight
    							</td>
    							<td class="font-style-italic">
 Decimal                 </td>
    							<td>
-								<p>The standard line height, which is the height of a
-single line in the dataset.</p>
+								<p>The height of each line.</p>
 
    							</td>
    						</tr>
@@ -328,17 +272,13 @@ single line in the dataset.</p>
    						<td>
 Integer               </td>
    						<td>
-							<p>The final index value after the operation.</p>
+							<p>The index of the last appended blank line.</p>
 
    						</td>
    					</tr>
    				</tbody>
    			</table>
 
-
-   		<h4>Remarks</h4>
-		<p>All specified parameters must be in the same unit of measurement (using
-inches is recommended).</p>
 
    </div>
 
@@ -352,7 +292,7 @@ inches is recommended).</p>
         <div class="contribution d-print-none">
         </div>
 
-        
+
       </div>
 
       <div class="affix">
@@ -361,7 +301,7 @@ inches is recommended).</p>
     </main>
 
 
-    <footer class="border-top">
+    <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
           Made with <a href="https://go.microsoft.com/fwlink/?linkid=2247728">ALDoc</a> and <a href="https://dotnet.github.io/docfx">DocFx</a>

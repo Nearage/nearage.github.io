@@ -31,9 +31,6 @@ references:
 - uid: M:Codeunit::Mathx.Nmod(Decimal,Decimal):Decimal
   name: Nmod
   href: reference/rldr/Codeunit/Mathx.html
-- uid: M:Table::RLDR.SetBlank(Integer,Integer):Integer
-  name: SetBlank
-  href: reference/rldr/Table/RLDR.html
 - uid: M:Table::RLDR.Use(Decimal,Decimal,Decimal,Decimal,Decimal):Integer
   name: Use
   href: reference/rldr/Table/RLDR.html
@@ -41,13 +38,8 @@ references:
   name: RLDR
   summary: >
     <p sourcefile="reference/rldr/Module/RLDR.yml" sourcestartlinenumber="1" jsonPath="/summary">RLDR implements dynamic structures in RDL reports, showcasing its ability to efficiently manage complex workflows.</p>
-  fqName: RLDR by Alejandro J de Tena (1.0.0.9)
+  fqName: RLDR by Alejandro J de Tena (2.0.0.0)
   href: reference/rldr/Module/RLDR.html
-- uid: N:Module::RLDR_obsolete_by_[Untagged]
-  tag: '[Untagged]'
-  href: reference/rldr/Obsoletion/obsolete_by_%5BUntagged%5D.html
-- uid: N:Module::RLDR_obsolete_by_[Untagged]#
-  href: reference/rldr/Obsoletion/obsolete_by_%5BUntagged%5D.html
 - uid: O:Codeunit::Enumx
   name: Enumx
   fqName: Enumx
@@ -56,18 +48,10 @@ references:
   name: Mathx
   fqName: Mathx
   href: reference/rldr/Codeunit/Mathx.html
-- uid: O:Report::RLDR_Ver#_1
-  name: "\"RLDR Ver. 1\""
-  fqName: "\"RLDR Ver. 1\""
-  href: reference/rldr/Report/RLDR-Ver.-1.html
-- uid: O:Report::RLDR_Ver#_2
-  name: "\"RLDR Ver. 2\""
-  fqName: "\"RLDR Ver. 2\""
-  href: reference/rldr/Report/RLDR-Ver.-2.html
-- uid: O:Report::RLDR_Ver#_3
-  name: "\"RLDR Ver. 3\""
-  fqName: "\"RLDR Ver. 3\""
-  href: reference/rldr/Report/RLDR-Ver.-3.html
+- uid: O:Report::RLDR_Demo_1
+  name: "\"RLDR Demo 1\""
+  fqName: "\"RLDR Demo 1\""
+  href: reference/rldr/Report/RLDR-Demo-1.html
 - uid: O:Table::RLDR
   name: RLDR
   fqName: RLDR

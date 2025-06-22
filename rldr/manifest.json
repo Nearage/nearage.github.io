@@ -1,12 +1,8 @@
 {
-  "homepages": [],
-  "source_base_path": "C:/Users/Administrador/RLDR_1-0-0-9",
+  "source_base_path": "C:/Users/adetena/Documents/RLDR_2-0-0-0",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
@@ -47,41 +43,11 @@
       "version": ""
     },
     {
-      "type": "BusinessCentralObsoletionList",
-      "source_relative_path": "reference/rldr/Obsoletion/obsolete_by_[Untagged].yml",
-      "output": {
-        ".html": {
-          "relative_path": "reference/rldr/Obsoletion/obsolete_by_[Untagged].html"
-        }
-      },
-      "version": ""
-    },
-    {
       "type": "BusinessCentralApplicationObject",
-      "source_relative_path": "reference/rldr/Report/RLDR-Ver.-1.yml",
+      "source_relative_path": "reference/rldr/Report/RLDR-Demo-1.yml",
       "output": {
         ".html": {
-          "relative_path": "reference/rldr/Report/RLDR-Ver.-1.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "BusinessCentralApplicationObject",
-      "source_relative_path": "reference/rldr/Report/RLDR-Ver.-2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "reference/rldr/Report/RLDR-Ver.-2.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "BusinessCentralApplicationObject",
-      "source_relative_path": "reference/rldr/Report/RLDR-Ver.-3.yml",
-      "output": {
-        ".html": {
-          "relative_path": "reference/rldr/Report/RLDR-Ver.-3.html"
+          "relative_path": "reference/rldr/Report/RLDR-Demo-1.html"
         }
       },
       "version": ""
@@ -92,6 +58,19 @@
       "output": {
         ".html": {
           "relative_path": "reference/rldr/Table/RLDR.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "reference/rldr/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "reference/rldr/toc.html"
+        },
+        ".json": {
+          "relative_path": "reference/rldr/toc.json"
         }
       },
       "version": ""
@@ -110,7 +89,6 @@
       "version": ""
     }
   ],
-  "version_info": {},
   "groups": [
     {
       "xrefmap": "xrefmap.yml"
