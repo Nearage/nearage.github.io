@@ -151,7 +151,7 @@ end;
         DynamicFooterHeight: Decimal;
         FooterHeight: Decimal;
         DynamicHeight: Decimal;
-        LineHeight: Decimal;
+        BlankLineHeight: Decimal;
     begin
         PageHeight := 11.69;
         StaticHeaderHeight := 1.00;
@@ -164,9 +164,9 @@ end;
         DynamicFooterHeight := 1.00;
         FooterHeight := 0.25;
         DynamicHeight := TableHeaderHeight + DynamicFooterHeight + FooterHeight;
-        LineHeight := 0.25;
+        BlankLineHeight := 0.25;
 
-        SetParams(PageHeight, StaticHeight, DynamicHeight, LineHeight);
+        SetParams(PageHeight, StaticHeight, DynamicHeight, BlankLineHeight);
     end;
 </code></pre>
 <h2 id="6-execute-the-report">6. Execute the report</h2>
