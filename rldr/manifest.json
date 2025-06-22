@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/Users/adetena/Documents/RLDR_2-0-0-0",
+  "source_base_path": "C:/Users/adetena/Documents/RLDR_2-0-0-1",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -44,10 +44,20 @@
     },
     {
       "type": "BusinessCentralApplicationObject",
-      "source_relative_path": "reference/rldr/Report/RLDR-Demo-1.yml",
+      "source_relative_path": "reference/rldr/PermissionSet/RLDR.yml",
       "output": {
         ".html": {
-          "relative_path": "reference/rldr/Report/RLDR-Demo-1.html"
+          "relative_path": "reference/rldr/PermissionSet/RLDR.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "BusinessCentralApplicationObject",
+      "source_relative_path": "reference/rldr/Report/RLDRDemo1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "reference/rldr/Report/RLDRDemo1.html"
         }
       },
       "version": ""

@@ -38,7 +38,7 @@ references:
   name: RLDR
   summary: >
     <p sourcefile="reference/rldr/Module/RLDR.yml" sourcestartlinenumber="1" jsonPath="/summary">RLDR implements dynamic structures in RDL reports, showcasing its ability to efficiently manage complex workflows.</p>
-  fqName: RLDR by Alejandro J de Tena (2.0.0.0)
+  fqName: RLDR by Alejandro J de Tena (2.0.0.1)
   href: reference/rldr/Module/RLDR.html
 - uid: O:Codeunit::Enumx
   name: Enumx
@@ -48,10 +48,14 @@ references:
   name: Mathx
   fqName: Mathx
   href: reference/rldr/Codeunit/Mathx.html
-- uid: O:Report::RLDR_Demo_1
-  name: "\"RLDR Demo 1\""
-  fqName: "\"RLDR Demo 1\""
-  href: reference/rldr/Report/RLDR-Demo-1.html
+- uid: O:PermissionSet::RLDR
+  name: RLDR
+  fqName: RLDR
+  href: reference/rldr/PermissionSet/RLDR.html
+- uid: O:Report::RLDRDemo1
+  name: RLDRDemo1
+  fqName: RLDRDemo1
+  href: reference/rldr/Report/RLDRDemo1.html
 - uid: O:Table::RLDR
   name: RLDR
   fqName: RLDR
