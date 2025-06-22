@@ -81,7 +81,7 @@
 <h1 id="implementation">Implementation</h1>
 <h2 id="prerequisites">Prerequisites</h2>
 <ol>
-<li>Download the latest <a href="./Alejandro%20J%20de%20Tena_RLDR_2.0.0.2.app">RLDR</a> package.</li>
+<li>Download the latest <a href="./Alejandro%20J%20de%20Tena_RLDR_2.0.0.3.app">RLDR</a> package.</li>
 <li><strong>Upload</strong> and <strong>install</strong> the downloaded package to <strong>Business Central</strong>.</li>
 <li>Declare a new dependency for the RLDR package in your project.</li>
 <li>Download symbols for the new package.</li>
@@ -109,7 +109,7 @@
     
     trigger OnPreDataItem()
     begin
-        Use(PageHeight, DataCount, StaticHeight, DynamicHeight, LineHeight);
+        Use(PageHeight, DataCount, StaticHeight, DynamicHeight, BlankLineHeight);
     end;
 }
 </code></pre>
@@ -123,43 +123,50 @@ The <code>Use</code> method is defined in the <code>RLDR</code> table <sup><smal
 <p>The following example demonstrates how to setup the <code>Use</code> method with a single line of code for simplicity and efficiency:</p>
 <pre><code class="lang-al">trigger OnPreDataItem()
 begin
-    Use(11.69, Line.Count(), 2.00 + Subtotal.Count() * 0.25, 1.69, 0.25);
+    SetParams(11.69, 2.00 + Line.Count() * 0.25 + Subtotal.Count() * 0.25, 1.69, 0.25);
 end;
 </code></pre>
 <h3 id="42-example-using-inline-values-for-clarity">4.2 Example using inline values for clarity.</h3>
 <p>The following example demonstrates how to use inline values for better readability and maintainability of the code without the need for additional variables:</p>
 <pre><code class="lang-al">    trigger OnPreDataItem()
     begin
-        Use(11.69,
-            Line.Count(),
-            1.00 + (Subtotal.Count() * 0.25 + 0.75) + 0.25,
-            0.44 + 1.00 + 0.25,
-            0.25);
+        SetParams(11.69,
+                  1.00 + Line.Count() * 0.25 + Subtotal.Count() * 0.25 + 0.75 + 0.25,
+                  0.44 + 1.00 + 0.25,
+                  0.25);
     end;
 </code></pre>
 <h3 id="43-example-using-named-variables-for-readability">4.3 Example using named variables for readability.</h3>
 <p>The following example demonstrates how to use named variables for better readability and maintainability of the code:</p>
 <pre><code class="lang-al">    trigger OnPreDataItem()
     var
-        DynamicHeight:      Decimal;
-        LineHeight:         Decimal;
-        PageHeight:         Decimal;
-        StaticHeight:       Decimal;
-        SubtotalHeight:     Decimal;
-        SubtotalLineHeight: Decimal;
-        DataCount:          Integer;
-        SubtotalCount:      Integer;
+        PageHeight: Decimal;
+        StaticHeaderHeight: Decimal;
+        DataHeight: Decimal;
+        SubtotalHeight: Decimal;
+        TotalizationHeight: Decimal;
+        FootnoteHeight: Decimal;
+        StaticHeight: Decimal;
+        TableHeaderHeight: Decimal;
+        DynamicFooterHeight: Decimal;
+        FooterHeight: Decimal;
+        DynamicHeight: Decimal;
+        LineHeight: Decimal;
     begin
-        PageHeight         := 11.69;
-        DataCount          := Line.Count();
-        SubtotalCount      := Subtotal.Count();
-        SubtotalLineHeight := 0.25;
-        SubtotalHeight     := SubtotalCount * SubtotalLineHeight;
-        StaticHeight       := 1.00 + SubtotalHeight + 0.75 + 0.25;
-        DynamicHeight      := 0.44 + 1.00 + 0.25;
-        LineHeight         := 0.25;
+        PageHeight := 11.69;
+        StaticHeaderHeight := 1.00;
+        DataHeight := Line.Count() * 0.25;
+        SubtotalHeight := Subtotal.Count() * 0.25;
+        TotalizationHeight := 0.75;
+        FootnoteHeight := 0.25;
+        StaticHeight := StaticHeaderHeight + DataHeight + SubtotalHeight + TotalizationHeight + FootnoteHeight;
+        TableHeaderHeight := 0.44;
+        DynamicFooterHeight := 1.00;
+        FooterHeight := 0.25;
+        DynamicHeight := TableHeaderHeight + DynamicFooterHeight + FooterHeight;
+        LineHeight := 0.25;
 
-        Use(PageHeight, DataCount, StaticHeight, DynamicHeight, LineHeight);
+        SetParams(PageHeight, StaticHeight, DynamicHeight, LineHeight);
     end;
 </code></pre>
 <h2 id="6-execute-the-report">6. Execute the report</h2>
@@ -169,7 +176,7 @@ end;
 <h1 id="additional-information">Additional Information</h1>
 <ul>
 <li><strong>Publisher:</strong> Alejandro J de Tena</li>
-<li><strong>Version:</strong> 2.0.0.2</li>
+<li><strong>Version:</strong> 2.0.0.3</li>
 <li><strong>Platform:</strong> 21.0.0.0</li>
 <li><strong>Application:</strong> 21.0.0.0</li>
 </ul>

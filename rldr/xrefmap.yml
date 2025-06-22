@@ -31,14 +31,14 @@ references:
 - uid: M:Codeunit::Mathx.Nmod(Decimal,Decimal):Decimal
   name: Nmod
   href: reference/rldr/Codeunit/Mathx.html
-- uid: M:Table::RLDR.Use(Decimal,Decimal,Decimal,Decimal,Decimal):Integer
-  name: Use
+- uid: M:Table::RLDR.SetParams(Decimal,Decimal,Decimal,Decimal):Integer
+  name: SetParams
   href: reference/rldr/Table/RLDR.html
 - uid: N:Module::RLDR
   name: RLDR
   summary: >
     <p sourcefile="reference/rldr/Module/RLDR.yml" sourcestartlinenumber="1" jsonPath="/summary">RLDR implements dynamic structures in RDL reports, showcasing its ability to efficiently manage complex workflows.</p>
-  fqName: RLDR by Alejandro J de Tena (2.0.0.2)
+  fqName: RLDR by Alejandro J de Tena (2.0.0.3)
   href: reference/rldr/Module/RLDR.html
 - uid: O:Codeunit::Enumx
   name: Enumx
