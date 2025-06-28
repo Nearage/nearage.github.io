@@ -81,7 +81,7 @@
 <h1 id="implementation">Implementation</h1>
 <h2 id="prerequisites">Prerequisites</h2>
 <ol>
-<li>Download the latest <a href="./Alejandro%20J%20de%20Tena_RLDR_2.1.0.0.app">RLDR</a> package.</li>
+<li>Download the latest <a href="./Alejandro%20J%20de%20Tena_RLDR_2.2.0.1.app">RLDR</a> package.</li>
 <li><strong>Upload</strong> and <strong>install</strong> the downloaded package to <strong>Business Central</strong>.</li>
 <li>Declare a new dependency for the RLDR package in your project.</li>
 <li>Download symbols for the new package.</li>
@@ -113,7 +113,7 @@
     end;
 }
 </code></pre>
-<p>Replace PageHeight, DataCount, StaticHeight, DynamicHeight, and LineHeight with the actual values or variables that you want to use for the report parameters.</p>
+<p>Replace PageHeight, DataCount, StaticHeight, DynamicHeight, and BlankLineHeight with the actual values or variables that you want to use for the report parameters.</p>
 <blockquote>
 <p><strong>Note</strong><br>
 The <code>Use</code> method is defined in the <code>RLDR</code> table <sup><small><a href="#notes">4</a></small></sup> and is used to set the parameters for the report.</p>
@@ -151,7 +151,7 @@ end;
         DynamicFooterHeight: Decimal;
         FooterHeight: Decimal;
         DynamicHeight: Decimal;
-        LineHeight: Decimal;
+        BlankLineHeight: Decimal;
     begin
         PageHeight := 11.69;
         StaticHeaderHeight := 1.00;
@@ -164,9 +164,9 @@ end;
         DynamicFooterHeight := 1.00;
         FooterHeight := 0.25;
         DynamicHeight := TableHeaderHeight + DynamicFooterHeight + FooterHeight;
-        LineHeight := 0.25;
+        BlankLineHeight := 0.25;
 
-        SetParams(PageHeight, StaticHeight, DynamicHeight, LineHeight);
+        SetParams(PageHeight, StaticHeight, DynamicHeight, BlankLineHeight);
     end;
 </code></pre>
 <h2 id="6-execute-the-report">6. Execute the report</h2>
@@ -176,7 +176,7 @@ end;
 <h1 id="additional-information">Additional Information</h1>
 <ul>
 <li><strong>Publisher:</strong> Alejandro J de Tena</li>
-<li><strong>Version:</strong> 2.1.0.0</li>
+<li><strong>Version:</strong> 2.2.0.1</li>
 <li><strong>Platform:</strong> 21.0.0.0</li>
 <li><strong>Application:</strong> 21.0.0.0</li>
 </ul>

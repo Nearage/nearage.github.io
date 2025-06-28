@@ -38,14 +38,28 @@ references:
   name: RLDR
   summary: >
     <p sourcefile="reference/rldr/Module/RLDR.yml" sourcestartlinenumber="1" jsonPath="/summary">RLDR implements dynamic structures in RDL reports, showcasing its ability to efficiently manage complex workflows.</p>
-  fqName: RLDR by Alejandro J de Tena (2.1.0.0)
+  fqName: RLDR by Alejandro J de Tena (2.2.0.1)
   href: reference/rldr/Module/RLDR.html
 - uid: O:Codeunit::Enumx
   name: Enumx
+  summary: >
+    <p sourcefile="reference/rldr/Codeunit/Enumx.yml" sourcestartlinenumber="1" jsonPath="/summary">Provides utility functions for working with enum variants.
+
+    This codeunit includes methods to convert enum variants to text and decimal values,
+
+    enaling project-wide definition of constant values with translation support, such
+
+    as captions, labels, and other text representations.</p>
   fqName: Enumx
   href: reference/rldr/Codeunit/Enumx.html
 - uid: O:Codeunit::Mathx
   name: Mathx
+  summary: >
+    <p sourcefile="reference/rldr/Codeunit/Mathx.yml" sourcestartlinenumber="1" jsonPath="/summary">Provides mathematical utility functions.
+
+    This codeunit includes methods for performing mathematical operations that
+
+    are not directly supported by the standard AL language.</p>
   fqName: Mathx
   href: reference/rldr/Codeunit/Mathx.html
 - uid: O:PermissionSet::RLDR
@@ -66,5 +80,17 @@ references:
   href: reference/rldr/Report/RLDRDemo3.html
 - uid: O:Table::RLDR
   name: RLDR
+  summary: >
+    <p sourcefile="reference/rldr/Table/RLDR.yml" sourcestartlinenumber="1" jsonPath="/summary">The RLDR table is used to calculate the number of blank lines needed
+
+    to fill a page based on the provided parameters such as page height,
+
+    static content height, dynamic content height, and blank line height.
+
+    It is designed to be used in scenarios where dynamic content needs to
+
+    be displayed on a report or page, ensuring that the layout is visually
+
+    appealing and that there are no unnecessary gaps or overlaps.</p>
   fqName: RLDR
   href: reference/rldr/Table/RLDR.html
